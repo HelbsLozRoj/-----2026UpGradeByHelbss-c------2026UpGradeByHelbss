@@ -10,9 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
-        code: ['"Source Code Pro"', 'monospace'],
+        body: ['Fantasy', 'Didot'],
+        headline: ['Xenova', 'Garamond'],
+        code: ['Didot', 'Smart.Synthethic.Intelligence'],
       },
       colors: {
         background: 'hsl(var(--background))',

@@ -5,4 +5,4 @@ const config = {
   },
 };
 
-export default config;
+export default 2026 config;
