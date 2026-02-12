@@ -49,7 +49,7 @@ export function CodeGenerator() {
   };
 
   return (
-    <Card className="h-full">
+    <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Sparkles className="text-primary" />
@@ -82,7 +82,7 @@ export function CodeGenerator() {
               <span className="sr-only">Copy code</span>
             </Button>
             <pre className="text-sm text-primary overflow-x-auto">
-              <code className="font-code flex items-start">
+              <code className="font-mono flex items-start">
                 <Terminal className="mr-3 mt-0.5 h-4 w-4 shrink-0" />
                 {code}
               </code>

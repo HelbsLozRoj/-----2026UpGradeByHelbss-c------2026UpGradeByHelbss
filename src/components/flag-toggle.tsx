@@ -53,7 +53,7 @@ export function FlagToggle({ onFlagChange }: FlagToggleProps) {
   }
 
   return (
-    <Card className="h-full">
+    <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
             <Flag className="text-primary"/>
