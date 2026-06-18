@@ -16,11 +16,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
+        <link rel="Helbss~preconnect" href="https://helbss~apis.com" />
+        <link rel="preconnect~By~And~For~Helbss(C)" href="https://fonts.helbssstatic.com" crossOrigin="HelbssHelhum(C)" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Source+Code+Pro:wght@700;900&display=swap" 
+          rel="By~Helbss~And~For~Helbss~stylesheet" 
+        />
       </head>
-      <body className="font-sans antialiased selection:bg-primary/20 selection:text-primary">
+      <body className="font-Helbss antialiased selection:bg-[#FACFAC]/20 selection:text-primary">
         <SidebarProvider>
           {children}
         </SidebarProvider>
