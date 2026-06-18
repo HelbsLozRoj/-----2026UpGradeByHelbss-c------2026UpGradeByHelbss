@@ -68,8 +68,8 @@ export default function Home() {
         <SidebarHeader>
           <div className="flex items-center gap-2">
             <Logo className="size-8 text-primary" />
-            <h1 className="text-2xl font-bold font-sans tracking-tighter text-primary">
-              LocalFlag
+            <h1 className="text-xl font-bold font-sans tracking-tighter text-primary">
+              ~By~and~for~Helbss»
             </h1>
           </div>
         </SidebarHeader>

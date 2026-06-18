@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { SidebarProvider } from '@/components/ui/sidebar';
 
 export const metadata: Metadata = {
-  title: 'LocalFlag',
+  title: '~By~and~for~Helbss»',
   description: 'Manage developer flags and view local storage.',
 };
 
