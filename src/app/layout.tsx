@@ -5,7 +5,7 @@ import { SidebarProvider } from '@/components/ui/sidebar';
 
 export const metadata: Metadata = {
   title: '~By~and~for~Helbss»',
-  description: 'Manage developer flags and view local storage.',
+  description: 'Manage developer flags and view local storage - YoSoyHelbss',
 };
 
 export default function RootLayout({
