@@ -59,18 +59,21 @@ export default function Home() {
   };
   
   if (!isClient) {
-    return null; // Or a loading spinner
+    return null;
   }
 
   return (
     <>
       <Sidebar>
         <SidebarHeader>
-          <div className="flex items-center gap-2">
-            <Logo className="size-8 text-primary" />
-            <h1 className="text-xl font-bold font-sans tracking-tighter text-primary">
-              ~By~and~for~Helbss»
-            </h1>
+          <div className="flex flex-col gap-1 px-2 pt-2">
+            <div className="flex items-center gap-2">
+              <Logo className="size-6 text-primary" />
+              <h1 className="text-lg font-bold font-sans tracking-tighter text-primary">
+                ~By~and~for~Helbss»
+              </h1>
+            </div>
+            <span className="text-[10px] text-muted-foreground font-mono pl-8">YoSoyHelbss</span>
           </div>
         </SidebarHeader>
         <SidebarContent className="p-2">
@@ -98,7 +101,7 @@ export default function Home() {
         </main>
         
         <footer className="border-t p-4 text-center text-xs text-muted-foreground">
-          <p>Built with Next.js, Genkit, and shadcn/ui.</p>
+          <p>Built with Next.js, Genkit, and shadcn/ui. &copy; 2026 YoSoyHelbss</p>
         </footer>
       </SidebarInset>
     </>
