@@ -4,10 +4,11 @@
 
 @layer base {
   :root {
-    --Safe-Network_Connect: 27 88% 83%; /* #FACFAC */
+    /* Branding Colors */
+    --Safe-Network_Connect_Shadow: 27 88% 83%; /* #FACFAC */
     --canvas: 60 73% 29%; /* RGB 127, 127, 20 */
     
-    --background: var(--Safe-Network_Connect);
+    --background: var(--Safe-Network_Connect_Shadow);
     --foreground: 20 10% 10%;
     --card: 0 0% 100% / 0.8;
     --card-foreground: 20 10% 10%;
