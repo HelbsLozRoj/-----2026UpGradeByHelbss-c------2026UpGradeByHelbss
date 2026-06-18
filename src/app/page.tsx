@@ -62,6 +62,13 @@ export default function Home() {
     return null;
   }
 
+  const systemInfo = {
+    commitSha: "f9811ea",
+    workspaceSlug: "studio-6397789453",
+    experimentsEnabled: false,
+    accessMode: "Private & Self-Managed"
+  };
+
   return (
     <>
       <Sidebar className="border-r border-sidebar-border/50">
@@ -82,6 +89,15 @@ export default function Home() {
           <div className="flex flex-col gap-6">
             <FlagToggle onFlagChange={refreshLocalStorage} />
             <CodeGenerator />
+            
+            <div className="mt-auto pt-6 border-t border-sidebar-border/30">
+              <div className="text-[9px] font-mono text-muted-foreground/60 space-y-1">
+                <p>WS: {systemInfo.workspaceSlug}</p>
+                <p>SHA: {systemInfo.commitSha}</p>
+                <p>EXP: {systemInfo.experimentsEnabled ? "ENABLED" : "DISABLED"}</p>
+                <p>MODE: {systemInfo.accessMode}</p>
+              </div>
+            </div>
           </div>
         </SidebarContent>
       </Sidebar>
@@ -96,6 +112,11 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <div className="hidden md:block">
+            <span className="text-[10px] bg-white/10 text-white/70 px-2 py-1 rounded-full font-mono uppercase tracking-tighter">
+              Commit: {systemInfo.commitSha}
+            </span>
+          </div>
         </header>
 
         <main className="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full">
@@ -104,8 +125,9 @@ export default function Home() {
           </div>
         </main>
         
-        <footer className="border-t border-white/10 p-6 text-center text-[10px] text-white/40 font-mono uppercase tracking-widest">
-          <p>Hybrid.OS // Build: 2026.06.18 // ~By~and~for~Helbss(C)2026</p>
+        <footer className="border-t border-white/10 p-6 text-center text-[10px] text-white/40 font-mono uppercase tracking-widest space-y-2">
+          <p>Hybrid.OS 2026 // Build: 2026.06.18 // ~By~and~for~Helbss(C)2026</p>
+          <p className="opacity-50">Private and Self-Managed // Unauthorized interaction restricted</p>
         </footer>
       </SidebarInset>
     </>
