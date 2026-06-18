@@ -74,7 +74,7 @@ export default function Home() {
               </h1>
             </div>
             <span className="text-[10px] text-muted-foreground font-mono pl-10 uppercase tracking-widest opacity-70">
-              ~By~and~for~Helbss
+              ~By~and~for~Helbss(C)2026
             </span>
           </div>
         </SidebarHeader>
@@ -85,13 +85,13 @@ export default function Home() {
           </div>
         </SidebarContent>
       </Sidebar>
-      <SidebarInset className="bg-background/95 backdrop-blur-sm">
-        <header className="flex items-center justify-between border-b border-border/50 p-4 md:p-6 sticky top-0 bg-background/80 backdrop-blur-md z-10">
+      <SidebarInset className="bg-[hsl(var(--canvas))] shadow-inner">
+        <header className="flex items-center justify-between border-b border-white/10 p-4 md:p-6 sticky top-0 bg-[hsl(var(--canvas))/80] backdrop-blur-md z-10">
           <div className="flex items-center gap-4">
-            <SidebarTrigger className="md:hidden"/>
+            <SidebarTrigger className="md:hidden text-white/80 hover:text-white"/>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight">System Terminal</h1>
-              <p className="text-sm text-muted-foreground">
+              <h1 className="text-2xl font-bold tracking-tight text-white">System Terminal</h1>
+              <p className="text-sm text-white/60">
                 Managed by Hybrid Core (C) 2026 HelbsLozRoj
               </p>
             </div>
@@ -99,10 +99,12 @@ export default function Home() {
         </header>
 
         <main className="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full">
-          <StorageView items={items} onAddItem={handleAddItem} onDeleteItem={handleDeleteItem} />
+          <div className="backdrop-blur-xl bg-white/5 rounded-2xl p-6 border border-white/10 shadow-2xl">
+            <StorageView items={items} onAddItem={handleAddItem} onDeleteItem={handleDeleteItem} />
+          </div>
         </main>
         
-        <footer className="border-t border-border/50 p-6 text-center text-[10px] text-muted-foreground font-mono uppercase tracking-widest">
+        <footer className="border-t border-white/10 p-6 text-center text-[10px] text-white/40 font-mono uppercase tracking-widest">
           <p>Hybrid.OS // Build: 2026.06.18 // ~By~and~for~Helbss(C)2026</p>
         </footer>
       </SidebarInset>
