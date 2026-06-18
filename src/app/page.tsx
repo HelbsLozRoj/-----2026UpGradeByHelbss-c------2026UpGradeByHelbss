@@ -64,44 +64,46 @@ export default function Home() {
 
   return (
     <>
-      <Sidebar>
+      <Sidebar className="border-r border-sidebar-border/50">
         <SidebarHeader>
-          <div className="flex flex-col gap-1 px-2 pt-2">
+          <div className="flex flex-col gap-1 px-3 pt-4">
             <div className="flex items-center gap-2">
-              <Logo className="size-6 text-primary" />
-              <h1 className="text-lg font-bold font-sans tracking-tighter text-primary">
-                ~By~and~for~Helbss»
+              <Logo className="size-8 text-primary" />
+              <h1 className="text-xl font-bold font-sans tracking-tight text-primary">
+                Hybrid.OS 2026
               </h1>
             </div>
-            <span className="text-[10px] text-muted-foreground font-mono pl-8">YoSoyHelbss</span>
+            <span className="text-[10px] text-muted-foreground font-mono pl-10 uppercase tracking-widest opacity-70">
+              ~By~and~for~Helbss
+            </span>
           </div>
         </SidebarHeader>
-        <SidebarContent className="p-2">
-          <div className="flex flex-col gap-4">
+        <SidebarContent className="p-4">
+          <div className="flex flex-col gap-6">
             <FlagToggle onFlagChange={refreshLocalStorage} />
             <CodeGenerator />
           </div>
         </SidebarContent>
       </Sidebar>
-      <SidebarInset>
-        <header className="flex items-center justify-between border-b p-4">
+      <SidebarInset className="bg-background/95 backdrop-blur-sm">
+        <header className="flex items-center justify-between border-b border-border/50 p-4 md:p-6 sticky top-0 bg-background/80 backdrop-blur-md z-10">
           <div className="flex items-center gap-4">
             <SidebarTrigger className="md:hidden"/>
             <div>
-              <h1 className="text-2xl font-semibold">Local Storage Dashboard</h1>
+              <h1 className="text-2xl font-bold tracking-tight">System Terminal</h1>
               <p className="text-sm text-muted-foreground">
-                A toolkit for managing developer flags and your browser's local storage.
+                Managed by Hybrid Core (C) 2026 HelbsLozRoj
               </p>
             </div>
           </div>
         </header>
 
-        <main className="flex-1 p-4 md:p-6">
+        <main className="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full">
           <StorageView items={items} onAddItem={handleAddItem} onDeleteItem={handleDeleteItem} />
         </main>
         
-        <footer className="border-t p-4 text-center text-xs text-muted-foreground">
-          <p>Built with Next.js, Genkit, and shadcn/ui. &copy; 2026 YoSoyHelbss</p>
+        <footer className="border-t border-border/50 p-6 text-center text-[10px] text-muted-foreground font-mono uppercase tracking-widest">
+          <p>Hybrid.OS // Build: 2026.06.18 // ~By~and~for~Helbss(C)2026</p>
         </footer>
       </SidebarInset>
     </>

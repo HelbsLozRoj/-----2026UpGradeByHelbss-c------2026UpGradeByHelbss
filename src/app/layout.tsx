@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster"
 import { SidebarProvider } from '@/components/ui/sidebar';
 
 export const metadata: Metadata = {
-  title: '~By~and~for~Helbss»',
-  description: 'Manage developer flags and view local storage - YoSoyHelbss',
+  title: 'Hybrid.OS 2026 ~By~and~for~Helbss(C)2026',
+  description: 'Operating System Dashboard for Developer Control - YoSoyHelbss',
 };
 
 export default function RootLayout({
@@ -18,9 +18,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Source+Code+Pro&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased selection:bg-primary/20 selection:text-primary">
         <SidebarProvider>
           {children}
         </SidebarProvider>

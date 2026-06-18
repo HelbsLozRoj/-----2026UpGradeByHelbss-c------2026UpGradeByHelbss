@@ -1,6 +1,6 @@
 {
-  "name": "by-and-for-helbss",
-  "version": "2026",
+  "name": "hybrid-os-2026",
+  "version": "2026.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
