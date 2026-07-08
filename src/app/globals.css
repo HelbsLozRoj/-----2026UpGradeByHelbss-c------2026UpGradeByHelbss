@@ -8,66 +8,45 @@
     --Safe-Network_Connect_Shadow: 27 88% 83%; /* #FACFAC */
     --canvas: 60 73% 29%; /* RGB 127, 127, 20 */
     
-    --background: var(--Safe-Network_Connect_Shadow);
-    --foreground: 20 10% 10%;
-    --card: 0 0% 100% / 0.8;
-    --card-foreground: 20 10% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 10%;
-    --primary: var(--canvas);
-    --primary-foreground: 0 0% 98%;
-    --secondary: 27 88% 90%;
-    --secondary-foreground: 20 10% 15%;
-    --muted: 27 20% 90%;
-    --muted-foreground: 20 10% 40%;
-    --accent: 60 73% 40%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 27 20% 75%;
-    --input: 27 20% 75%;
-    --ring: var(--canvas);
-    --radius: 0.75rem;
+    /* Dark OS Theme Defaults */
+    --background: var(--canvas);
+    --foreground: 0 0% 100%;
     
-    --sidebar-background: 27 88% 80%;
-    --sidebar-foreground: 20 10% 15%;
-    --sidebar-primary: var(--canvas);
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 27 88% 75%;
-    --sidebar-accent-foreground: 20 10% 15%;
-    --sidebar-border: 27 20% 70%;
-    --sidebar-ring: var(--canvas);
-  }
-
-  .dark {
-    --background: 20 10% 5%;
-    --foreground: 0 0% 98%;
-    --card: 20 10% 8% / 0.9;
-    --card-foreground: 0 0% 98%;
-    --popover: 20 10% 8%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 60 73% 45%;
-    --primary-foreground: 20 10% 10%;
-    --secondary: 20 10% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 20 10% 15%;
-    --muted-foreground: 20 10% 65%;
-    --accent: 60 73% 29% / 0.5;
-    --accent-foreground: 60 73% 80%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 20 10% 20%;
-    --input: 20 10% 20%;
-    --ring: 60 73% 29%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
     
-    --sidebar-background: 20 10% 3%;
-    --sidebar-foreground: 20 10% 90%;
-    --sidebar-primary: 60 73% 29%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 20 10% 10%;
-    --sidebar-accent-foreground: 60 73% 29%;
-    --sidebar-border: 20 10% 10%;
-    --sidebar-ring: 60 73% 29%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 60 73% 45%; /* Yellowish Accent */
+    --primary-foreground: 0 0% 0%;
+    
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 60 73% 45%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 84% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 15%;
+    --input: 0 0% 2%;
+    --ring: 60 73% 45%;
+    
+    --radius: 1rem;
+    
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 60 73% 45%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 60 73% 45%;
+    --sidebar-border: 0 0% 10%;
+    --sidebar-ring: 60 73% 45%;
   }
 }
 
@@ -76,6 +55,29 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply bg-background text-foreground transition-colors duration-300 font-sans;
   }
+  h1, h2, h3, h4, .font-helbss {
+    font-family: 'Canela Text', serif;
+  }
+}
+
+/* Custom Table Styles for Terminal Look */
+.terminal-table tr {
+  @apply border-white/5;
+}
+.terminal-table td {
+  @apply py-4;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-black/20;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20;
 }

@@ -32,42 +32,24 @@ export function FlagToggle({ onFlagChange }: FlagToggleProps) {
     onFlagChange();
   };
 
-  if (!isClient) {
-    return (
-        <Card>
-            <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                    <Flag className="text-primary"/>
-                    <span>Developer Flag</span>
-                </CardTitle>
-                <CardDescription>
-                    Enable or disable special developer features.
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <div className="flex items-center space-x-2 p-4 rounded-lg bg-muted animate-pulse">
-                </div>
-            </CardContent>
-        </Card>
-    )
-  }
+  if (!isClient) return null;
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-            <Flag className="text-primary"/>
+    <Card className="bg-black/40 border-white/5 rounded-2xl overflow-hidden shadow-2xl">
+      <CardHeader className="pb-4">
+        <CardTitle className="flex items-center gap-2 text-white font-helbss text-xl">
+            <Flag className="size-5 text-primary" />
             <span>Developer Flag</span>
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="text-white/40 text-xs">
           Enable or disable special developer features across the app.
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="flex items-center justify-between space-x-2 rounded-lg border p-4">
-          <Label htmlFor="developer-mode" className="flex flex-col space-y-1">
-            <span className="font-medium">isDeveloper Mode</span>
-            <span className="font-normal text-muted-foreground">
+        <div className="flex items-center justify-between p-5 rounded-xl bg-white/[0.03] border border-white/5">
+          <Label htmlFor="developer-mode" className="flex flex-col gap-1">
+            <span className="text-white font-medium text-sm">isDeveloper Mode</span>
+            <span className="text-[10px] text-white/40 uppercase tracking-wider">
               Currently: {isDev ? "Enabled" : "Disabled"}
             </span>
           </Label>
@@ -75,7 +57,7 @@ export function FlagToggle({ onFlagChange }: FlagToggleProps) {
             id="developer-mode" 
             checked={isDev} 
             onCheckedChange={handleToggle}
-            aria-label="Toggle Developer Mode"
+            className="data-[state=checked]:bg-primary"
           />
         </div>
       </CardContent>

@@ -41,17 +41,14 @@ type StorageViewProps = {
 };
 
 const formSchema = z.object({
-  key: z.string().min(1, "Key cannot be empty."),
-  value: z.string().min(1, "Value cannot be empty."),
+  key: z.string().min(1, "Key required"),
+  value: z.string().min(1, "Value required"),
 });
 
 export function StorageView({ items, onAddItem, onDeleteItem }: StorageViewProps) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      key: "",
-      value: "",
-    },
+    defaultValues: { key: "", value: "" },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -60,97 +57,107 @@ export function StorageView({ items, onAddItem, onDeleteItem }: StorageViewProps
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <Card className="lg:col-span-1">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Plus className="text-primary" />
+    <div className="grid grid-cols-1 gap-12">
+      <Card className="bg-black/60 border-white/5 rounded-[2rem] shadow-2xl p-6">
+        <CardHeader className="pb-8">
+          <CardTitle className="flex items-center gap-3 text-white font-helbss text-3xl">
+            <Plus className="size-6 text-primary" />
             Add Storage Entry
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-white/40">
             Create a new key-value pair in local storage.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <FormField
-                control={form.control}
-                name="key"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Key</FormLabel>
-                    <FormControl>
-                      <Input placeholder="e.g., theme" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="value"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Value</FormLabel>
-                    <FormControl>
-                      <Input placeholder="e.g., dark" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full">
-                <Plus className="mr-2 h-4 w-4" /> Add Item
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-4xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <FormField
+                  control={form.control}
+                  name="key"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white/50 uppercase text-[10px] tracking-widest font-mono">Key</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="e.g., theme" 
+                          {...field} 
+                          className="bg-black border-white/5 text-white h-14 rounded-xl focus:border-primary/50"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="value"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white/50 uppercase text-[10px] tracking-widest font-mono">Value</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="e.g., dark" 
+                          {...field} 
+                          className="bg-black border-white/5 text-white h-14 rounded-xl focus:border-primary/50"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <Button type="submit" className="bg-primary text-black hover:bg-primary/90 h-14 px-10 rounded-xl font-bold">
+                <Plus className="mr-2 size-4" /> Add Item
               </Button>
             </form>
           </Form>
         </CardContent>
       </Card>
       
-      <Card className="lg:col-span-2">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Database className="text-primary"/>
+      <Card className="bg-black/60 border-white/5 rounded-[2rem] shadow-2xl p-6">
+        <CardHeader className="pb-8">
+          <CardTitle className="flex items-center gap-3 text-white font-helbss text-3xl">
+            <Database className="size-6 text-primary" />
             Local Storage Contents
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-white/40">
             A live view of all key-value pairs in your browser's storage.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <ScrollArea className="h-72 w-full rounded-md border">
-            <Table>
-              <TableHeader className="sticky top-0 bg-card">
-                <TableRow>
-                  <TableHead className="w-[30%]">Key</TableHead>
-                  <TableHead>Value</TableHead>
-                  <TableHead className="text-right w-20">Actions</TableHead>
+          <div className="rounded-2xl border border-white/5 overflow-hidden">
+            <Table className="terminal-table">
+              <TableHeader className="bg-white/[0.02]">
+                <TableRow className="border-white/5 hover:bg-transparent">
+                  <TableHead className="text-white/30 uppercase text-[10px] tracking-widest font-mono h-14">Key</TableHead>
+                  <TableHead className="text-white/30 uppercase text-[10px] tracking-widest font-mono h-14">Value</TableHead>
+                  <TableHead className="text-right text-white/30 uppercase text-[10px] tracking-widest font-mono h-14">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {items.length > 0 ? (
                   items.map(({ key, value }) => (
-                    <TableRow key={key}>
-                      <TableCell className="font-medium text-primary break-all">{key}</TableCell>
-                      <TableCell className="text-muted-foreground break-all">{value}</TableCell>
+                    <TableRow key={key} className="border-white/5 hover:bg-white/[0.01]">
+                      <TableCell className="font-mono text-primary/70">{key}</TableCell>
+                      <TableCell className="text-white/60">{value}</TableCell>
                       <TableCell className="text-right">
                         <AlertDialog>
                           <AlertDialogTrigger asChild>
-                             <Button variant="ghost" size="icon" aria-label={`Delete item ${key}`}>
-                                <Trash2 className="h-4 w-4 text-destructive/80 hover:text-destructive" />
+                             <Button variant="ghost" size="icon" className="hover:bg-destructive/10">
+                                <Trash2 className="size-4 text-destructive/50" />
                             </Button>
                           </AlertDialogTrigger>
-                          <AlertDialogContent>
+                          <AlertDialogContent className="bg-black border-white/10">
                             <AlertDialogHeader>
-                              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                              <AlertDialogDescription>
-                                This action cannot be undone. This will permanently delete the key <span className="font-bold text-primary">{key}</span> from your local storage.
+                              <AlertDialogTitle className="text-white font-helbss">System Deletion Confirmation</AlertDialogTitle>
+                              <AlertDialogDescription className="text-white/50">
+                                Permanently remove key <span className="text-primary font-mono">{key}</span> from system storage?
                               </AlertDialogDescription>
                             </AlertDialogHeader>
                             <AlertDialogFooter>
-                              <AlertDialogCancel>Cancel</AlertDialogCancel>
-                              <AlertDialogAction onClick={() => onDeleteItem(key)} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">Delete</AlertDialogAction>
+                              <AlertDialogCancel className="bg-white/5 text-white border-white/10 hover:bg-white/10">Cancel</AlertDialogCancel>
+                              <AlertDialogAction onClick={() => onDeleteItem(key)} className="bg-destructive text-white hover:bg-destructive/90">Confirm Delete</AlertDialogAction>
                             </AlertDialogFooter>
                           </AlertDialogContent>
                         </AlertDialog>
@@ -159,14 +166,14 @@ export function StorageView({ items, onAddItem, onDeleteItem }: StorageViewProps
                   ))
                 ) : (
                   <TableRow>
-                    <TableCell colSpan={3} className="h-24 text-center text-muted-foreground">
-                      Local storage is empty.
+                    <TableCell colSpan={3} className="h-40 text-center text-white/20 font-mono italic">
+                      SYSTEM_STORAGE: NULL
                     </TableCell>
                   </TableRow>
                 )}
               </TableBody>
             </Table>
-          </ScrollArea>
+          </div>
         </CardContent>
       </Card>
     </div>

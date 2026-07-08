@@ -71,61 +71,61 @@ export default function Home() {
 
   return (
     <>
-      <Sidebar className="border-r border-sidebar-border/50">
-        <SidebarHeader>
-          <div className="flex flex-col gap-1 px-3 pt-4">
-            <div className="flex items-center gap-2">
+      <Sidebar className="border-r border-sidebar-border bg-black">
+        <SidebarHeader className="pt-8 pb-6">
+          <div className="flex flex-col gap-2 px-4">
+            <div className="flex items-center gap-3">
               <Logo className="size-8 text-primary" />
-              <h1 className="text-xl font-bold font-sans tracking-tight text-primary">
+              <h1 className="text-2xl font-bold tracking-tight text-primary font-helbss">
                 Hybrid.OS 2026
               </h1>
             </div>
-            <span className="text-[10px] text-muted-foreground font-mono pl-10 uppercase tracking-widest opacity-70">
+            <span className="text-[9px] text-muted-foreground font-mono pl-11 uppercase tracking-[0.2em] opacity-60">
               ~By~and~for~Helbss(C)2026
             </span>
           </div>
         </SidebarHeader>
-        <SidebarContent className="p-4">
-          <div className="flex flex-col gap-6">
+        <SidebarContent className="p-4 gap-8">
+          <div className="flex flex-col gap-8">
             <FlagToggle onFlagChange={refreshLocalStorage} />
             <CodeGenerator />
-            
-            <div className="mt-auto pt-6 border-t border-sidebar-border/30">
-              <div className="text-[9px] font-mono text-muted-foreground/60 space-y-1">
-                <p>WS: {systemInfo.workspaceSlug}</p>
-                <p>SHA: {systemInfo.commitSha}</p>
-                <p>EXP: {systemInfo.experimentsEnabled ? "ENABLED" : "DISABLED"}</p>
-                <p>MODE: {systemInfo.accessMode}</p>
-              </div>
+          </div>
+          
+          <div className="mt-auto pt-8 border-t border-white/5">
+            <div className="text-[8px] font-mono text-muted-foreground/40 space-y-1.5 uppercase tracking-tighter">
+              <p>WS: {systemInfo.workspaceSlug}</p>
+              <p>SHA: {systemInfo.commitSha}</p>
+              <p>EXP: {systemInfo.experimentsEnabled ? "ENABLED" : "DISABLED"}</p>
+              <p>MODE: {systemInfo.accessMode}</p>
             </div>
           </div>
         </SidebarContent>
       </Sidebar>
-      <SidebarInset className="bg-[hsl(var(--canvas))] shadow-inner">
-        <header className="flex items-center justify-between border-b border-white/10 p-4 md:p-6 sticky top-0 bg-[hsl(var(--canvas))/80] backdrop-blur-md z-10">
+      <SidebarInset className="bg-[hsl(var(--canvas))]">
+        <header className="flex items-center justify-between p-8 md:p-12 sticky top-0 z-10">
           <div className="flex items-center gap-4">
             <SidebarTrigger className="md:hidden text-white/80 hover:text-white"/>
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight text-white">System Terminal</h1>
-              <p className="text-sm text-white/60">
+            <div className="space-y-1">
+              <h1 className="text-4xl font-bold tracking-tight text-white font-helbss">System Terminal</h1>
+              <p className="text-sm text-white/50 font-sans">
                 Managed by Hybrid Core (C) 2026 HelbsLozRoj
               </p>
             </div>
           </div>
           <div className="hidden md:block">
-            <span className="text-[10px] bg-white/10 text-white/70 px-2 py-1 rounded-full font-mono uppercase tracking-tighter">
-              Commit: {systemInfo.commitSha}
+            <span className="text-[10px] bg-white/5 border border-white/10 text-white/50 px-3 py-1.5 rounded-full font-mono uppercase tracking-widest">
+              COMMIT: {systemInfo.commitSha}
             </span>
           </div>
         </header>
 
-        <main className="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full">
-          <div className="backdrop-blur-xl bg-white/5 rounded-2xl p-6 border border-white/10 shadow-2xl">
+        <main className="flex-1 px-8 pb-12 md:px-12 max-w-7xl">
+          <div className="space-y-12">
             <StorageView items={items} onAddItem={handleAddItem} onDeleteItem={handleDeleteItem} />
           </div>
         </main>
         
-        <footer className="border-t border-white/10 p-6 text-center text-[10px] text-white/40 font-mono uppercase tracking-widest space-y-2">
+        <footer className="p-12 text-center text-[9px] text-white/20 font-mono uppercase tracking-[0.3em] space-y-2">
           <p>Hybrid.OS 2026 // Build: 2026.06.18 // ~By~and~for~Helbss(C)2026</p>
           <p className="opacity-50">Private and Self-Managed // Unauthorized interaction restricted</p>
         </footer>
