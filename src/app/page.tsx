@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { FlagToggle } from "@/components/flag-toggle";
 import { StorageView } from "@/components/storage-view";
 import { CodeGenerator } from "@/components/code-generator";
+import { SystemHealth } from "@/components/system-health";
 import { Logo } from "@/components/icons";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -87,6 +88,7 @@ export default function Home() {
         </SidebarHeader>
         <SidebarContent className="p-4 gap-8">
           <div className="flex flex-col gap-8">
+            <SystemHealth systemId={systemInfo.commitSha} workspaceSlug={systemInfo.workspaceSlug} />
             <FlagToggle onFlagChange={refreshLocalStorage} />
             <CodeGenerator />
           </div>

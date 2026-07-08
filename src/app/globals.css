@@ -4,12 +4,13 @@
 
 @layer base {
   :root {
-    /* Branding Colors */
+    /* Branding Colors - Locked */
     --Safe-Network_Connect_Shadow: #FACFAC;
-    --canvas: rgb(127, 127, 20);
+    /* rgb(127,127,20) represented for ShadCN hsl() usage or raw rgb() usage */
+    --canvas: 60 73% 29%; 
     
     /* Dark OS Theme Defaults */
-    --background: var(--canvas);
+    --background: 0 0% 0%;
     --foreground: 0 0% 100%;
     
     --card: 0 0% 5%;
@@ -55,8 +56,9 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground transition-colors duration-300 font-sans;
+    @apply antialiased transition-colors duration-300 font-sans;
     background-color: var(--Safe-Network_Connect_Shadow);
+    color: hsl(var(--foreground));
   }
   h1, h2, h3, h4, .font-helbss {
     font-family: 'Canela Text', serif;
