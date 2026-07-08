@@ -5,8 +5,8 @@
 @layer base {
   :root {
     /* Branding Colors */
-    --Safe-Network_Connect_Shadow: 27 88% 83%; /* #FACFAC */
-    --canvas: 60 73% 29%; /* RGB 127, 127, 20 */
+    --Safe-Network_Connect_Shadow: #FACFAC;
+    --canvas: rgb(127, 127, 20);
     
     /* Dark OS Theme Defaults */
     --background: var(--canvas);
@@ -56,6 +56,7 @@
   }
   body {
     @apply bg-background text-foreground transition-colors duration-300 font-sans;
+    background-color: var(--Safe-Network_Connect_Shadow);
   }
   h1, h2, h3, h4, .font-helbss {
     font-family: 'Canela Text', serif;

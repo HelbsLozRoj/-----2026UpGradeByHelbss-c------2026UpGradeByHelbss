@@ -3,5 +3,6 @@
   "description": "Enterprise Grade Private Operating System Dashboard for YoSoyHelbss",
   "commitSha": "f9811ea",
   "workspaceSlug": "studio-6397789453",
-  "enabledExperiments": false
+  "enabledExperiments": false,
+  "accessMode": "Private & Self-Managed"
 }
