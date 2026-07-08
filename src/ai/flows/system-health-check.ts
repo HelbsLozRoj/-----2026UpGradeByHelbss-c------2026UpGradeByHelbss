@@ -1,11 +1,8 @@
+
 'use server';
 
 /**
  * @fileOverview A system health diagnostic agent for Hybrid.OS 2026.
- *
- * - runSystemHealthCheck - A function that performs a system diagnostic.
- * - SystemHealthInput - The input type for the health check.
- * - SystemHealthOutput - The return type for the health check.
  */
 
 import { ai } from '@/ai/genkit';
@@ -25,10 +22,6 @@ const SystemHealthOutputSchema = z.object({
 });
 export type SystemHealthOutput = z.infer<typeof SystemHealthOutputSchema>;
 
-export async function runSystemHealthCheck(input: SystemHealthInput): Promise<SystemHealthOutput> {
-  return systemHealthFlow(input);
-}
-
 const systemHealthFlow = ai.defineFlow(
   {
     name: 'systemHealthFlow',
@@ -44,6 +37,20 @@ const systemHealthFlow = ai.defineFlow(
       Provide a highly technical status report.`,
       output: { schema: SystemHealthOutputSchema },
     });
-    return response.output!;
+    
+    if (!response.output) {
+      return {
+        status: 'LOCKED',
+        summary: 'System integrity response failed to populate.',
+        lastCheck: new Date().toISOString(),
+        integrityHash: 'ERR_NULL_OUT',
+      };
+    }
+    
+    return response.output;
   }
 );
+
+export async function runSystemHealthCheck(input: SystemHealthInput): Promise<SystemHealthOutput> {
+  return systemHealthFlow(input);
+}

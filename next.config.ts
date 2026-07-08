@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -9,7 +10,10 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    allowedDevOrigins: ['*.cloudworkstations.dev'],
+    allowedDevOrigins: [
+      '*.cloudworkstations.dev',
+      '6000-firebase-studio-1769598062456.cluster-64pjnskmlbaxowh5lzq6i7v4ra.cloudworkstations.dev'
+    ],
   },
   images: {
     remotePatterns: [
