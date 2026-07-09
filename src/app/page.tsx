@@ -5,6 +5,7 @@ import { FlagToggle } from "@/components/flag-toggle";
 import { StorageView } from "@/components/storage-view";
 import { CodeGenerator } from "@/components/code-generator";
 import { SystemHealth } from "@/components/system-health";
+import { SmartDebugger } from "@/components/smart-debugger";
 import { Logo } from "@/components/icons";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -109,7 +110,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <SidebarTrigger className="md:hidden text-white/80 hover:text-white"/>
             <div className="space-y-1">
-              <h1 className="text-4xl font-bold tracking-tight text-white font-helbss">el Mayordomo Terminal</h1>
+              <h1 className="text-4xl font-bold tracking-tight text-white font-helbss uppercase">2026 Terminal</h1>
               <p className="text-sm text-white/50 font-sans">
                 Managed by Hybrid Core (C) 2026 YoSoyHelbss
               </p>
@@ -124,6 +125,7 @@ export default function Home() {
 
         <main className="flex-1 px-8 pb-12 md:px-12 max-w-7xl">
           <div className="space-y-12">
+            <SmartDebugger />
             <StorageView items={items} onAddItem={handleAddItem} onDeleteItem={handleDeleteItem} />
           </div>
         </main>
