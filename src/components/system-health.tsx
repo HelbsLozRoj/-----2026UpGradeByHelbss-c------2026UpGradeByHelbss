@@ -15,6 +15,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 import type { SystemHealthOutput } from "@/ai/flows/system-health-check";
 
+/**
+ * @fileOverview 2026~ ByHelbss(C) System Integrity Component
+ */
+
 type SystemHealthProps = {
   systemId: string;
   workspaceSlug: string;

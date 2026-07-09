@@ -33,6 +33,10 @@ import {
 } from "@/components/ui/table";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "./ui/alert-dialog";
 
+/**
+ * @fileOverview 2026~ ByHelbss(C) Storage Viewer Component
+ */
+
 type StorageViewProps = {
   items: StorageItem[];
   onAddItem: (key: string, value: string) => void;

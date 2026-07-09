@@ -10,6 +10,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 import type { DebuggerOutput } from "@/ai/flows/smart-debugger-flow";
 
+/**
+ * @fileOverview 2026~ ByHelbss(C) Smart Debugger Component
+ */
+
 export function SmartDebugger() {
   const [log, setLog] = useState("");
   const [result, setResult] = useState<DebuggerOutput | null>(null);

@@ -10,6 +10,10 @@ import { LiveMonitor } from "@/components/live-monitor";
 import { Logo } from "@/components/icons";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 
+/**
+ * @fileOverview 2026~ ByHelbss(C) Sovereign Dashboard Terminal
+ */
+
 export type StorageItem = {
   key: string;
   value: string;
@@ -70,7 +74,8 @@ export default function Home_2026_ByHelbss() {
     workspaceSlug: "studio-6397789453",
     experimentsEnabled: false,
     accessMode: "Private & Self-Managed",
-    signature: "2026~ ByHelbss(C)"
+    signature: "2026~ ByHelbss(C)",
+    domain: "helbshelhumio.com"
   };
 
   return (
@@ -79,12 +84,12 @@ export default function Home_2026_ByHelbss() {
         <SidebarHeader className="pt-8 pb-6">
           <div className="flex flex-col gap-2 px-4">
             <div className="flex items-center gap-3">
-              <Logo className="size-8 text-primary" />
+              <Logo className="size-10 text-primary" />
               <h1 className="text-2xl font-bold tracking-tight text-primary font-helbss uppercase">
                 el Mayordomo
               </h1>
             </div>
-            <span className="text-[9px] text-muted-foreground font-mono pl-11 uppercase tracking-[0.2em] opacity-60">
+            <span className="text-[9px] text-muted-foreground font-mono pl-13 uppercase tracking-[0.2em] opacity-60">
               Hybrid.OS 2026 ~By~and~for~Helbss(C)
             </span>
           </div>
@@ -102,6 +107,7 @@ export default function Home_2026_ByHelbss() {
               <p>SHA: {systemInfo.commitSha}</p>
               <p>EXP: {systemInfo.experimentsEnabled ? "ENABLED" : "DISABLED"}</p>
               <p>MODE: {systemInfo.accessMode}</p>
+              <p>DOMAIN: {systemInfo.domain}</p>
               <p className="text-primary/40">PROPRIETARY_SECURE_MODE: ON</p>
               <p className="text-primary/20">{systemInfo.signature}</p>
             </div>
@@ -137,6 +143,7 @@ export default function Home_2026_ByHelbss() {
         <footer className="p-12 text-center text-[9px] text-white/20 font-mono uppercase tracking-[0.3em] space-y-2">
           <p>Hybrid.OS 2026 // el Mayordomo // ~By~and~for~Helbss(C)2026</p>
           <p className="opacity-50 font-bold text-primary/30 italic">Unauthorized monitoring and manipulation restricted // 2026~ ByHelbss(C)</p>
+          <p className="text-[7px] text-white/10">{systemInfo.domain}</p>
         </footer>
       </SidebarInset>
     </>

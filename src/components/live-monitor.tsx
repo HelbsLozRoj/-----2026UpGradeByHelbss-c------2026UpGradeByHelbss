@@ -7,6 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 
+/**
+ * @fileOverview 2026~ ByHelbss(C) Live Telemetry Component
+ */
+
 export function LiveMonitor() {
   const [logs, setLogs] = useState<string[]>([]);
   const [isConnected, setIsConnected] = useState(false);

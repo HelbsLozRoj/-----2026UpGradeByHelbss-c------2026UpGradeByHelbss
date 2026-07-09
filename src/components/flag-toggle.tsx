@@ -12,6 +12,10 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Flag } from "lucide-react";
 
+/**
+ * @fileOverview 2026~ ByHelbss(C) Feature Flag Controller
+ */
+
 type FlagToggleProps = {
   onFlagChange: () => void;
 };

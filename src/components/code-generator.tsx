@@ -14,6 +14,10 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 
+/**
+ * @fileOverview 2026~ ByHelbss(C) Code Generator Component
+ */
+
 export function CodeGenerator() {
   const [code, setCode] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
