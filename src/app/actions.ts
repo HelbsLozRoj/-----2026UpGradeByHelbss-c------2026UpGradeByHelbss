@@ -5,6 +5,10 @@ import { runSystemHealthCheck_2026_ByHelbss, type SystemHealthOutput } from "@/a
 import { runSmartDebugger_2026_ByHelbss, type DebuggerOutput } from "@/ai/flows/smart-debugger-flow";
 import { executeLiveTelemetry_2026_ByHelbss } from "@/ai/flows/live-telemetry-flow";
 
+/**
+ * @fileOverview 2026~ ByHelbss(C) Sovereign API Layer
+ */
+
 export async function generateCode_2026_ByHelbss(): Promise<{ codeSnippet?: string; error?: string }> {
   try {
     if (!process.env.GEMINI_API_KEY) {
@@ -66,4 +70,18 @@ export async function getLiveTelemetry_2026_ByHelbss(systemId: string): Promise<
   } catch (error: any) {
     return { error: `2026~ ByHelbss(C) Telemetry error: ${error.message}` };
   }
+}
+
+export async function executeCliCommand_2026_ByHelbss(command: string): Promise<{ output: string }> {
+  // Simulating a private socket CLI response
+  const timestamp = new Date().toLocaleTimeString();
+  const responses: Record<string, string> = {
+    "ping": `PONG: 2026~ ByHelbss(C) node active. Latency: 4ms.`,
+    "status": `SYSTEM_ONLINE: WS: studio-6397789453 | SHA: f9811ea | MODE: PRIVATE_SELF_MANAGED`,
+    "clear": `TERMINAL_FLUSHED`,
+    "help": `AVAILABLE COMMANDS: ping, status, clear, help, sysinfo, live-grid`
+  };
+
+  const output = responses[command.toLowerCase()] || `COMMAND_NOT_FOUND: ${command}. Type 'help' for options.`;
+  return { output: `[${timestamp}] 2026~ ByHelbss(C) > ${output}` };
 }

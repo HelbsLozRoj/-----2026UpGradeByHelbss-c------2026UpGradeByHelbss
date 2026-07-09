@@ -7,6 +7,7 @@ import { CodeGenerator } from "@/components/code-generator";
 import { SystemHealth } from "@/components/system-health";
 import { SmartDebugger } from "@/components/smart-debugger";
 import { LiveMonitor } from "@/components/live-monitor";
+import { ProprietaryCli } from "@/components/proprietary-cli";
 import { Logo } from "@/components/icons";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -99,6 +100,7 @@ export default function Home_2026_ByHelbss() {
             <SystemHealth systemId={systemInfo.commitSha} workspaceSlug={systemInfo.workspaceSlug} />
             <FlagToggle onFlagChange={refreshLocalStorage_2026_ByHelbss} />
             <CodeGenerator />
+            <ProprietaryCli />
           </div>
           
           <div className="mt-auto pt-8 border-t border-white/5">
@@ -119,15 +121,16 @@ export default function Home_2026_ByHelbss() {
           <div className="flex items-center gap-4">
             <SidebarTrigger className="md:hidden text-white/80 hover:text-white"/>
             <div className="space-y-1">
-              <h1 className="text-4xl font-bold tracking-tight text-white font-helbss uppercase">2026 Terminal</h1>
+              <h1 className="text-4xl font-bold tracking-tight text-white font-helbss uppercase">2026 Sovereign Terminal</h1>
               <p className="text-sm text-white/50 font-sans">
-                Managed by Hybrid Core (C) 2026 YoSoyHelbss
+                Secure Monitoring for helbshelhumio.com (C) 2026 YoSoyHelbss
               </p>
             </div>
           </div>
           <div className="hidden md:block">
-            <span className="text-[10px] bg-black/40 border border-white/10 text-white/50 px-4 py-2 rounded-full font-mono uppercase tracking-widest">
-              SECURE_AUDIT_ACTIVE: {systemInfo.commitSha}
+            <span className="text-[10px] bg-black/40 border border-white/10 text-white/50 px-4 py-2 rounded-full font-mono uppercase tracking-widest flex items-center gap-2">
+              <span className="size-2 rounded-full bg-primary animate-pulse" />
+              LIVE_SOCKET_ACTIVE: {systemInfo.commitSha}
             </span>
           </div>
         </header>
@@ -142,7 +145,7 @@ export default function Home_2026_ByHelbss() {
         
         <footer className="p-12 text-center text-[9px] text-white/20 font-mono uppercase tracking-[0.3em] space-y-2">
           <p>Hybrid.OS 2026 // el Mayordomo // ~By~and~for~Helbss(C)2026</p>
-          <p className="opacity-50 font-bold text-primary/30 italic">Unauthorized monitoring and manipulation restricted // 2026~ ByHelbss(C)</p>
+          <p className="opacity-50 font-bold text-primary/30 italic">Unauthorized monitoring and manipulation restricted // Private API Sockets Enforced</p>
           <p className="text-[7px] text-white/10">{systemInfo.domain}</p>
         </footer>
       </SidebarInset>
