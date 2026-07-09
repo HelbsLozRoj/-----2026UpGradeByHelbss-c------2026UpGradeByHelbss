@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    // Removed problematic keys causing validation errors in this version
+    // Optimized for Hybrid.OS 2026
   },
   images: {
     remotePatterns: [
