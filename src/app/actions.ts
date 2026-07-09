@@ -1,4 +1,3 @@
-
 "use server";
 
 import { generateFlagCheckCode } from "@/ai/flows/generate-flag-check-code";
