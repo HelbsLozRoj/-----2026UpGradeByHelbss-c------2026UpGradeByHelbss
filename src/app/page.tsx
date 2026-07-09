@@ -6,6 +6,7 @@ import { StorageView } from "@/components/storage-view";
 import { CodeGenerator } from "@/components/code-generator";
 import { SystemHealth } from "@/components/system-health";
 import { SmartDebugger } from "@/components/smart-debugger";
+import { LiveMonitor } from "@/components/live-monitor";
 import { Logo } from "@/components/icons";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -125,6 +126,7 @@ export default function Home() {
 
         <main className="flex-1 px-8 pb-12 md:px-12 max-w-7xl">
           <div className="space-y-12">
+            <LiveMonitor />
             <SmartDebugger />
             <StorageView items={items} onAddItem={handleAddItem} onDeleteItem={handleDeleteItem} />
           </div>

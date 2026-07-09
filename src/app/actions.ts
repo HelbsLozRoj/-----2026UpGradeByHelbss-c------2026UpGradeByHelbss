@@ -3,6 +3,7 @@
 import { generateFlagCheckCode } from "@/ai/flows/generate-flag-check-code";
 import { runSystemHealthCheck, type SystemHealthOutput } from "@/ai/flows/system-health-check";
 import { runSmartDebugger, type DebuggerOutput } from "@/ai/flows/smart-debugger-flow";
+import { runLiveTelemetry } from "@/ai/flows/live-telemetry-flow";
 
 export async function generateCode(): Promise<{ codeSnippet?: string; error?: string }> {
   try {
@@ -52,5 +53,17 @@ export async function debugSystem(logContent: string): Promise<{ data?: Debugger
   } catch (error: any) {
     console.error("DEBUG_ERROR:", error);
     return { error: `Debugger engine failure: ${error.message}` };
+  }
+}
+
+export async function getLiveTelemetry(systemId: string): Promise<{ data?: string; error?: string }> {
+  try {
+    if (!process.env.GEMINI_API_KEY) {
+      throw new Error("PROPRIETARY_CONNECTION_NULL");
+    }
+    const result = await runLiveTelemetry({ systemId });
+    return { data: result };
+  } catch (error: any) {
+    return { error: error.message };
   }
 }
