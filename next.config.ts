@@ -10,10 +10,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    allowedDevOrigins: [
-      '*.cloudworkstations.dev',
-      '6000-firebase-studio-1769598062456.cluster-64pjnskmlbaxowh5lzq6i7v4ra.cloudworkstations.dev'
-    ],
+    // Removed problematic allowedDevOrigins key causing validation errors in this version
   },
   images: {
     remotePatterns: [

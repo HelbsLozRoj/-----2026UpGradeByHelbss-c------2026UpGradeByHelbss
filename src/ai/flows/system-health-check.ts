@@ -29,25 +29,29 @@ const systemHealthFlow = ai.defineFlow(
     outputSchema: SystemHealthOutputSchema,
   },
   async (input) => {
-    const response = await ai.generate({
-      prompt: `Perform a diagnostic audit for Hybrid.OS 2026. 
-      System ID (SHA): ${input.systemId}
-      Workspace: ${input.workspaceSlug}
-      Confirm that the system is Private and Self-Managed by HelbsLozRoj.
-      Provide a highly technical status report.`,
-      output: { schema: SystemHealthOutputSchema },
-    });
-    
-    if (!response.output) {
+    try {
+      const response = await ai.generate({
+        prompt: `Perform a diagnostic audit for Hybrid.OS 2026. 
+        System ID (SHA): ${input.systemId}
+        Workspace: ${input.workspaceSlug}
+        Confirm that the system is Private and Self-Managed by HelbsLozRoj.
+        Provide a highly technical status report.`,
+        output: { schema: SystemHealthOutputSchema },
+      });
+      
+      if (!response.output) {
+        throw new Error("AI_FLOW_NULL_OUTPUT");
+      }
+      
+      return response.output;
+    } catch (e: any) {
       return {
         status: 'LOCKED',
-        summary: 'System integrity response failed to populate.',
+        summary: `System integrity audit interrupted: ${e.message}`,
         lastCheck: new Date().toISOString(),
-        integrityHash: 'ERR_NULL_OUT',
+        integrityHash: 'ERR_INTERRUPT',
       };
     }
-    
-    return response.output;
   }
 );
 
