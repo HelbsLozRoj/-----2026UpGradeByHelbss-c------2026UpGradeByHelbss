@@ -78,11 +78,11 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <Logo className="size-8 text-primary" />
               <h1 className="text-2xl font-bold tracking-tight text-primary font-helbss uppercase">
-                Hybrid.OS 2026
+                el Mayordomo
               </h1>
             </div>
             <span className="text-[9px] text-muted-foreground font-mono pl-11 uppercase tracking-[0.2em] opacity-60">
-              ~By~and~for~Helbss(C)2026
+              Hybrid.OS 2026 ~By~and~for~Helbss(C)
             </span>
           </div>
         </SidebarHeader>
@@ -109,9 +109,9 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <SidebarTrigger className="md:hidden text-white/80 hover:text-white"/>
             <div className="space-y-1">
-              <h1 className="text-4xl font-bold tracking-tight text-white font-helbss">System Terminal</h1>
+              <h1 className="text-4xl font-bold tracking-tight text-white font-helbss">el Mayordomo Terminal</h1>
               <p className="text-sm text-white/50 font-sans">
-                Managed by Hybrid Core (C) 2026 HelbsLozRoj
+                Managed by Hybrid Core (C) 2026 YoSoyHelbss
               </p>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function Home() {
         </main>
         
         <footer className="p-12 text-center text-[9px] text-white/20 font-mono uppercase tracking-[0.3em] space-y-2">
-          <p>Hybrid.OS 2026 // Build: 2026.06.18 // ~By~and~for~Helbss(C)2026</p>
+          <p>Hybrid.OS 2026 // el Mayordomo // ~By~and~for~Helbss(C)2026</p>
           <p className="opacity-50 font-bold text-primary/30 italic">Unauthorized monitoring and manipulation restricted</p>
         </footer>
       </SidebarInset>

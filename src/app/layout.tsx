@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { SidebarProvider } from '@/components/ui/sidebar';
 
 export const metadata: Metadata = {
-  title: 'Hybrid.OS 2026 ~By~and~for~Helbss(C)2026',
+  title: 'el Mayordomo // Hybrid.OS 2026 ~By~and~for~Helbss(C)2026',
   description: 'Private and Self-Managed Operating System Dashboard - f9811ea',
 };
 
