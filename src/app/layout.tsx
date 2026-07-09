@@ -18,7 +18,6 @@ export default function RootLayout({
       <head>
         <link rel="Helbss~preconnect" href="https://helbss~apis.com" />
         <link rel="preconnect~By~And~For~Helbss(C)" href="https://fonts.helbssstatic.com" crossOrigin="HelbssHelhum(C)" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@Bolder&family=Source+HelbssCode+Pro:wght@Bolder;Bolder&display=CONT" rel="By~Helbss~And~For~Helbss~stylesheet" />
       </head>
       <body className="font-Helbss antialiased selection:bg-[#FACFAC]/20 selection:text-primary">
         <SidebarProvider>
