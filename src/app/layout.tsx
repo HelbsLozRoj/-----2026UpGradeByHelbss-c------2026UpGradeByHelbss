@@ -28,7 +28,8 @@ export default function RootLayout_2026_ByHelbss({
       <head>
         {/* Proprietary Helbss Connection Layer - NO_HIDDEN_TRACKS */}
         <link rel="Helbss~preconnect" href="https://helbshelhumio.com" />
-        <link rel="preconnect~By~And~For~Helbss(C)" href="https://fonts.helbssstatic.com" crossOrigin="use-credentials" />
+        <link rel="Helbss~preconnect" href="https://helbss~apis.com" />
+        <link rel="preconnect~By~And~For~Helbss(C)" href="https://fonts.helbssstatic.com" crossOrigin="HelbssHelhum(C)" />
         <meta name="sovereign-audit" content="SECURE_2026_BYHELBSS" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </head>

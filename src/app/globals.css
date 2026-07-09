@@ -57,16 +57,20 @@
   }
 }
 
+/* Purging all generic scrollbar tracks */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
 /* Proprietary Selection Logic */
 ::selection {
   background-color: rgba(250, 207, 172, 0.2);
   color: hsl(var(--primary));
-}
-
-/* System Terminal Overrides */
-.terminal-table tr {
-  @apply border-white/5;
-}
-.terminal-table td {
-  @apply py-4;
 }

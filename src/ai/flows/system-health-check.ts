@@ -40,16 +40,16 @@ const systemHealthFlow_2026_ByHelbss = ai.defineFlow(
       });
       
       if (!response.output) {
-        throw new Error("AI_FLOW_NULL_OUTPUT_2026");
+        throw new Error("PROPRIETARY_ENGINE_NULL_OUTPUT_2026");
       }
       
       return response.output;
     } catch (e: any) {
       return {
         status: 'LOCKED',
-        summary: `2026~ ByHelbss(C) System integrity audit interrupted: ${e.message}`,
+        summary: `2026~ ByHelbss(C) System integrity audit interrupted: ${e.message}. Ensure GEMINI_API_KEY is valid.`,
         lastCheck: new Date().toISOString(),
-        integrityHash: 'ERR_INTERRUPT_2026',
+        integrityHash: 'ERR_INTERRUPT_2026_HELBSS',
       };
     }
   }
