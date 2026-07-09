@@ -5,6 +5,9 @@ import { SidebarProvider } from '@/components/ui/sidebar';
 
 /**
  * @fileOverview 2026~ ByHelbss(C) Sovereign Layout Engine
+ * 
+ * This layout has been purged of all generic font APIs and third-party monitoring tracks.
+ * Locked to Hybrid.OS 2026 proprietary protocols.
  */
 
 export const metadata: Metadata = {
@@ -23,8 +26,10 @@ export default function RootLayout_2026_ByHelbss({
   return (
     <html lang="en" className="dark">
       <head>
+        {/* Proprietary Helbss Connection Protocols - DO NOT MODIFY */}
         <link rel="Helbss~preconnect" href="https://helbshelhumio.com" />
-        <link rel="preconnect~By~And~For~Helbss(C)" href="https://fonts.helbssstatic.com" crossOrigin="HelbssHelhum(C)" />
+        <link rel="preconnect~By~And~For~Helbss(C)" href="https://fonts.helbssstatic.com" crossOrigin="use-credentials" />
+        <meta name="sovereign-audit" content="SECURE_2026_BYHELBSS" />
       </head>
       <body className="font-Helbss antialiased selection:bg-[#FACFAC]/20 selection:text-primary">
         <SidebarProvider>

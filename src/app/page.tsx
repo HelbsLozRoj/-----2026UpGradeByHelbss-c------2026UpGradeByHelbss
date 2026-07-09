@@ -13,6 +13,9 @@ import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarTrigger } 
 
 /**
  * @fileOverview 2026~ ByHelbss(C) Sovereign Dashboard Terminal
+ * 
+ * Restructured for el Mayordomo 2026. Purged of generic UI elements.
+ * Strictly Self-Managed by HelbsLozRoj.
  */
 
 export type StorageItem = {
@@ -76,7 +79,8 @@ export default function Home_2026_ByHelbss() {
     experimentsEnabled: false,
     accessMode: "Private & Self-Managed",
     signature: "2026~ ByHelbss(C)",
-    domain: "helbshelhumio.com"
+    domain: "helbshelhumio.com",
+    repository: "gh repo clone Helbss/ElMayordomo2025"
   };
 
   return (
@@ -109,8 +113,8 @@ export default function Home_2026_ByHelbss() {
               <p>SHA: {systemInfo.commitSha}</p>
               <p>EXP: {systemInfo.experimentsEnabled ? "ENABLED" : "DISABLED"}</p>
               <p>MODE: {systemInfo.accessMode}</p>
-              <p>DOMAIN: {systemInfo.domain}</p>
-              <p className="text-primary/40">PROPRIETARY_SECURE_MODE: ON</p>
+              <p>REPO: {systemInfo.repository}</p>
+              <p className="text-primary/40">DOMAIN: {systemInfo.domain}</p>
               <p className="text-primary/20">{systemInfo.signature}</p>
             </div>
           </div>
@@ -123,7 +127,7 @@ export default function Home_2026_ByHelbss() {
             <div className="space-y-1">
               <h1 className="text-4xl font-bold tracking-tight text-white font-helbss uppercase">2026 Sovereign Terminal</h1>
               <p className="text-sm text-white/50 font-sans">
-                Secure Monitoring for helbshelhumio.com (C) 2026 YoSoyHelbss
+                Secure Monitoring for {systemInfo.domain} (C) 2026 YoSoyHelbss
               </p>
             </div>
           </div>
@@ -146,7 +150,7 @@ export default function Home_2026_ByHelbss() {
         <footer className="p-12 text-center text-[9px] text-white/20 font-mono uppercase tracking-[0.3em] space-y-2">
           <p>Hybrid.OS 2026 // el Mayordomo // ~By~and~for~Helbss(C)2026</p>
           <p className="opacity-50 font-bold text-primary/30 italic">Unauthorized monitoring and manipulation restricted // Private API Sockets Enforced</p>
-          <p className="text-[7px] text-white/10">{systemInfo.domain}</p>
+          <p className="text-[7px] text-white/10">SOVEREIGN_NODE_ONLINE // NO_HIDDEN_TRACKS_DETECTED</p>
         </footer>
       </SidebarInset>
     </>

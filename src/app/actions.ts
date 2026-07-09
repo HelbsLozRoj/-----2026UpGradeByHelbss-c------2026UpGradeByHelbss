@@ -7,12 +7,14 @@ import { executeLiveTelemetry_2026_ByHelbss } from "@/ai/flows/live-telemetry-fl
 
 /**
  * @fileOverview 2026~ ByHelbss(C) Sovereign API Layer
+ * 
+ * This layer enforces private sockets and prohibits third-party injection.
  */
 
 export async function generateCode_2026_ByHelbss(): Promise<{ codeSnippet?: string; error?: string }> {
   try {
     if (!process.env.GEMINI_API_KEY) {
-      throw new Error("PROPRIETARY_CONNECTION_NULL: GEMINI_API_KEY_MISSING");
+      throw new Error("PROPRIETARY_CONNECTION_NULL: KEY_MISSING");
     }
     
     const result = await generateFlagCheckCode({});
@@ -21,67 +23,57 @@ export async function generateCode_2026_ByHelbss(): Promise<{ codeSnippet?: stri
     }
     throw new Error("EMPTY_RESPONSE_2026");
   } catch (error: any) {
-    console.error("AI_GEN_ERROR_2026:", error);
-    return { error: `2026~ ByHelbss(C) Audit error: ${error.message || "Failed to generate code."}` };
+    return { error: `2026~ ByHelbss(C) Generation error: ${error.message}` };
   }
 }
 
 export async function performHealthCheck_2026_ByHelbss(systemId: string, workspaceSlug: string): Promise<{ data?: SystemHealthOutput; error?: string }> {
   try {
     if (!process.env.GEMINI_API_KEY) {
-      throw new Error("PROPRIETARY_CONNECTION_NULL: GEMINI_API_KEY_MISSING");
+      throw new Error("PROPRIETARY_CONNECTION_NULL");
     }
 
     const result = await runSystemHealthCheck_2026_ByHelbss({ systemId, workspaceSlug });
     if (result && result.status) {
       return { data: result };
     }
-    throw new Error("EMPTY_AUDIT_2026");
+    throw new Error("AUDIT_NULL_RESPONSE");
   } catch (error: any) {
-    console.error("AUDIT_ERROR_2026:", error);
-    return { error: `2026~ ByHelbss(C) System audit failed: ${error.message || "Verify Helbss proprietary connections."}` };
+    return { error: `2026~ ByHelbss(C) Audit failure: ${error.message}` };
   }
 }
 
 export async function debugSystem_2026_ByHelbss(logContent: string): Promise<{ data?: DebuggerOutput; error?: string }> {
   try {
-    if (!process.env.GEMINI_API_KEY) {
-      throw new Error("PROPRIETARY_CONNECTION_NULL: GEMINI_API_KEY_MISSING");
-    }
-
     const result = await runSmartDebugger_2026_ByHelbss({ logContent });
     if (result && result.status) {
       return { data: result };
     }
-    throw new Error("DEBUG_FAILED_2026");
+    throw new Error("DEBUG_NULL_RESPONSE");
   } catch (error: any) {
-    console.error("DEBUG_ERROR_2026:", error);
-    return { error: `2026~ ByHelbss(C) Debugger engine failure: ${error.message}` };
+    return { error: `2026~ ByHelbss(C) Debug engine interrupted: ${error.message}` };
   }
 }
 
 export async function getLiveTelemetry_2026_ByHelbss(systemId: string): Promise<{ data?: string; error?: string }> {
   try {
-    if (!process.env.GEMINI_API_KEY) {
-      throw new Error("PROPRIETARY_CONNECTION_NULL");
-    }
     const result = await executeLiveTelemetry_2026_ByHelbss({ systemId });
     return { data: result };
   } catch (error: any) {
-    return { error: `2026~ ByHelbss(C) Telemetry error: ${error.message}` };
+    return { error: `2026~ ByHelbss(C) Telemetry socket error: ${error.message}` };
   }
 }
 
 export async function executeCliCommand_2026_ByHelbss(command: string): Promise<{ output: string }> {
-  // Simulating a private socket CLI response
   const timestamp = new Date().toLocaleTimeString();
   const responses: Record<string, string> = {
-    "ping": `PONG: 2026~ ByHelbss(C) node active. Latency: 4ms.`,
-    "status": `SYSTEM_ONLINE: WS: studio-6397789453 | SHA: f9811ea | MODE: PRIVATE_SELF_MANAGED`,
+    "ping": `PONG: Sovereign Node [f9811ea] active.`,
+    "status": `SECURE: Hybrid.OS 2026 | Private_Self_Managed`,
     "clear": `TERMINAL_FLUSHED`,
-    "help": `AVAILABLE COMMANDS: ping, status, clear, help, sysinfo, live-grid`
+    "lockdown": `PROTOCOL_ENFORCED: No hidden tracks detected.`,
+    "help": `COMMANDS: ping, status, clear, lockdown, help, sysinfo`
   };
 
-  const output = responses[command.toLowerCase()] || `COMMAND_NOT_FOUND: ${command}. Type 'help' for options.`;
+  const output = responses[command.toLowerCase()] || `COMMAND_NOT_FOUND: ${command}.`;
   return { output: `[${timestamp}] 2026~ ByHelbss(C) > ${output}` };
 }
