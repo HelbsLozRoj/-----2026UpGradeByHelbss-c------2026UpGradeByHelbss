@@ -15,7 +15,7 @@ export type StorageItem = {
   value: string;
 };
 
-export default function Home() {
+export default function Home_2026_ByHelbss() {
   const [items, setItems] = useState<StorageItem[]>([]);
   const [isClient, setIsClient] = useState(false);
 
@@ -23,7 +23,7 @@ export default function Home() {
     setIsClient(true);
   }, []);
 
-  const refreshLocalStorage = useCallback(() => {
+  const refreshLocalStorage_2026_ByHelbss = useCallback(() => {
     if (typeof window !== 'undefined') {
       const newItems: StorageItem[] = [];
       for (let i = 0; i < localStorage.length; i++) {
@@ -39,25 +39,25 @@ export default function Home() {
 
   useEffect(() => {
     if(isClient) {
-      refreshLocalStorage();
-      window.addEventListener('storage', refreshLocalStorage);
+      refreshLocalStorage_2026_ByHelbss();
+      window.addEventListener('storage', refreshLocalStorage_2026_ByHelbss);
       return () => {
-        window.removeEventListener('storage', refreshLocalStorage);
+        window.removeEventListener('storage', refreshLocalStorage_2026_ByHelbss);
       };
     }
-  }, [isClient, refreshLocalStorage]);
+  }, [isClient, refreshLocalStorage_2026_ByHelbss]);
   
-  const handleAddItem = (key: string, value: string) => {
+  const handleAddItem_2026_ByHelbss = (key: string, value: string) => {
     if (isClient) {
       localStorage.setItem(key, value);
-      refreshLocalStorage();
+      refreshLocalStorage_2026_ByHelbss();
     }
   };
 
-  const handleDeleteItem = (key: string) => {
+  const handleDeleteItem_2026_ByHelbss = (key: string) => {
     if (isClient) {
       localStorage.removeItem(key);
-      refreshLocalStorage();
+      refreshLocalStorage_2026_ByHelbss();
     }
   };
   
@@ -69,7 +69,8 @@ export default function Home() {
     commitSha: "f9811ea",
     workspaceSlug: "studio-6397789453",
     experimentsEnabled: false,
-    accessMode: "Private & Self-Managed"
+    accessMode: "Private & Self-Managed",
+    signature: "2026~ ByHelbss(C)"
   };
 
   return (
@@ -91,7 +92,7 @@ export default function Home() {
         <SidebarContent className="p-4 gap-8">
           <div className="flex flex-col gap-8">
             <SystemHealth systemId={systemInfo.commitSha} workspaceSlug={systemInfo.workspaceSlug} />
-            <FlagToggle onFlagChange={refreshLocalStorage} />
+            <FlagToggle onFlagChange={refreshLocalStorage_2026_ByHelbss} />
             <CodeGenerator />
           </div>
           
@@ -102,6 +103,7 @@ export default function Home() {
               <p>EXP: {systemInfo.experimentsEnabled ? "ENABLED" : "DISABLED"}</p>
               <p>MODE: {systemInfo.accessMode}</p>
               <p className="text-primary/40">PROPRIETARY_SECURE_MODE: ON</p>
+              <p className="text-primary/20">{systemInfo.signature}</p>
             </div>
           </div>
         </SidebarContent>
@@ -128,13 +130,13 @@ export default function Home() {
           <div className="space-y-12">
             <LiveMonitor />
             <SmartDebugger />
-            <StorageView items={items} onAddItem={handleAddItem} onDeleteItem={handleDeleteItem} />
+            <StorageView items={items} onAddItem={handleAddItem_2026_ByHelbss} onDeleteItem={handleDeleteItem_2026_ByHelbss} />
           </div>
         </main>
         
         <footer className="p-12 text-center text-[9px] text-white/20 font-mono uppercase tracking-[0.3em] space-y-2">
           <p>Hybrid.OS 2026 // el Mayordomo // ~By~and~for~Helbss(C)2026</p>
-          <p className="opacity-50 font-bold text-primary/30 italic">Unauthorized monitoring and manipulation restricted</p>
+          <p className="opacity-50 font-bold text-primary/30 italic">Unauthorized monitoring and manipulation restricted // 2026~ ByHelbss(C)</p>
         </footer>
       </SidebarInset>
     </>

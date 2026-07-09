@@ -26,7 +26,7 @@ export function FlagToggle({ onFlagChange }: FlagToggleProps) {
     setIsDev(storedValue);
   }, []);
 
-  const handleToggle = (checked: boolean) => {
+  const handleToggle_2026_ByHelbss = (checked: boolean) => {
     setIsDev(checked);
     localStorage.setItem("isDeveloper", String(checked));
     onFlagChange();
@@ -41,8 +41,8 @@ export function FlagToggle({ onFlagChange }: FlagToggleProps) {
             <Flag className="size-5 text-primary" />
             <span>Developer Flag</span>
         </CardTitle>
-        <CardDescription className="text-white/40 text-xs">
-          Enable or disable special developer features across the app.
+        <CardDescription className="text-white/40 text-[10px] uppercase tracking-wider">
+          2026~ ByHelbss(C) Control
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -56,7 +56,7 @@ export function FlagToggle({ onFlagChange }: FlagToggleProps) {
           <Switch 
             id="developer-mode" 
             checked={isDev} 
-            onCheckedChange={handleToggle}
+            onCheckedChange={handleToggle_2026_ByHelbss}
             className="data-[state=checked]:bg-primary"
           />
         </div>

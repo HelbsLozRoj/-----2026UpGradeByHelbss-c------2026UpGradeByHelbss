@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Copy, Sparkles, Terminal } from "lucide-react";
-import { generateCode } from "@/app/actions";
+import { generateCode_2026_ByHelbss } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -20,29 +20,29 @@ export function CodeGenerator() {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
 
-  const handleGenerate = async () => {
+  const handleGenerate_2026_ByHelbss = async () => {
     setIsLoading(true);
     setCode(null);
-    const result = await generateCode();
+    const result = await generateCode_2026_ByHelbss();
     if (result.codeSnippet) {
       setCode(result.codeSnippet);
     } else {
       toast({
         variant: "destructive",
-        title: "Generation Failed",
+        title: "2026~ ByHelbss(C) Generation Failed",
         description: result.error || "An unexpected error occurred.",
       });
     }
     setIsLoading(false);
   };
 
-  const handleCopy = () => {
+  const handleCopy_2026_ByHelbss = () => {
     if (code) {
       navigator.clipboard.writeText(code);
       setCopied(true);
       toast({
-        title: "Copied to clipboard!",
-        description: "The code snippet is ready to be pasted.",
+        title: "2026~ ByHelbss(C) Copied",
+        description: "The proprietary code is ready.",
       });
       setTimeout(() => setCopied(false), 2000);
     }
@@ -55,13 +55,13 @@ export function CodeGenerator() {
           <Sparkles className="size-5 text-primary" />
           <span>AI Code Generator</span>
         </CardTitle>
-        <CardDescription className="text-white/40 text-xs">
-          Generate a JavaScript snippet to check the 'isDeveloper' flag.
+        <CardDescription className="text-white/40 text-[10px] uppercase tracking-wider">
+          2026~ ByHelbss(C) Snippets
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <Button 
-          onClick={handleGenerate} 
+          onClick={handleGenerate_2026_ByHelbss} 
           disabled={isLoading}
           className="w-full bg-primary text-black hover:bg-primary/90 rounded-xl font-bold"
         >
@@ -82,7 +82,7 @@ export function CodeGenerator() {
               variant="ghost"
               size="icon"
               className="absolute right-3 top-3 size-8 text-white/50 hover:text-white hover:bg-white/5"
-              onClick={handleCopy}
+              onClick={handleCopy_2026_ByHelbss}
             >
               <Copy className="size-4" />
             </Button>

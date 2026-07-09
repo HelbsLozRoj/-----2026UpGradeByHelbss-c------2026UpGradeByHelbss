@@ -31,7 +31,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ScrollArea } from "./ui/scroll-area";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "./ui/alert-dialog";
 
 type StorageViewProps = {
@@ -51,7 +50,7 @@ export function StorageView({ items, onAddItem, onDeleteItem }: StorageViewProps
     defaultValues: { key: "", value: "" },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit_2026_ByHelbss(values: z.infer<typeof formSchema>) {
     onAddItem(values.key, values.value);
     form.reset();
   }
@@ -64,13 +63,13 @@ export function StorageView({ items, onAddItem, onDeleteItem }: StorageViewProps
             <Plus className="size-6 text-primary" />
             Add Storage Entry
           </CardTitle>
-          <CardDescription className="text-white/40">
-            Create a new key-value pair in local storage.
+          <CardDescription className="text-white/40 text-[10px] uppercase tracking-widest font-mono">
+            2026~ ByHelbss(C) System Write
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-4xl">
+            <form onSubmit={form.handleSubmit(onSubmit_2026_ByHelbss)} className="space-y-8 max-w-4xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <FormField
                   control={form.control}
@@ -121,8 +120,8 @@ export function StorageView({ items, onAddItem, onDeleteItem }: StorageViewProps
             <Database className="size-6 text-primary" />
             Local Storage Contents
           </CardTitle>
-          <CardDescription className="text-white/40">
-            A live view of all key-value pairs in your browser's storage.
+          <CardDescription className="text-white/40 text-[10px] uppercase tracking-widest font-mono">
+            2026~ ByHelbss(C) Data View
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -152,7 +151,7 @@ export function StorageView({ items, onAddItem, onDeleteItem }: StorageViewProps
                             <AlertDialogHeader>
                               <AlertDialogTitle className="text-white font-helbss">System Deletion Confirmation</AlertDialogTitle>
                               <AlertDialogDescription className="text-white/50">
-                                Permanently remove key <span className="text-primary font-mono">{key}</span> from system storage?
+                                Permanently remove key <span className="text-primary font-mono">{key}</span> from 2026~ ByHelbss(C) storage?
                               </AlertDialogDescription>
                             </AlertDialogHeader>
                             <AlertDialogFooter>
@@ -167,7 +166,7 @@ export function StorageView({ items, onAddItem, onDeleteItem }: StorageViewProps
                 ) : (
                   <TableRow>
                     <TableCell colSpan={3} className="h-40 text-center text-white/20 font-mono italic">
-                      SYSTEM_STORAGE: NULL
+                      SYSTEM_STORAGE_2026: NULL
                     </TableCell>
                   </TableRow>
                 )}

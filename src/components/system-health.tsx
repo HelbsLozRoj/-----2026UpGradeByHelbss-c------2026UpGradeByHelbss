@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ShieldCheck, Activity, AlertCircle, RefreshCw } from "lucide-react";
-import { performHealthCheck } from "@/app/actions";
+import { ShieldCheck, Activity, RefreshCw } from "lucide-react";
+import { performHealthCheck_2026_ByHelbss } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -25,19 +25,19 @@ export function SystemHealth({ systemId, workspaceSlug }: SystemHealthProps) {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleAudit = async () => {
+  const handleAudit_2026_ByHelbss = async () => {
     setIsLoading(true);
-    const result = await performHealthCheck(systemId, workspaceSlug);
+    const result = await performHealthCheck_2026_ByHelbss(systemId, workspaceSlug);
     if (result.data) {
       setHealthData(result.data);
       toast({
-        title: "Audit Complete",
+        title: "2026~ ByHelbss(C) Audit Complete",
         description: "Hybrid.OS 2026 integrity verified.",
       });
     } else {
       toast({
         variant: "destructive",
-        title: "Audit Failed",
+        title: "2026~ ByHelbss(C) Audit Failed",
         description: result.error || "System unreachable.",
       });
     }
@@ -51,13 +51,13 @@ export function SystemHealth({ systemId, workspaceSlug }: SystemHealthProps) {
           <ShieldCheck className="size-5 text-primary" />
           <span>System Integrity</span>
         </CardTitle>
-        <CardDescription className="text-white/40 text-xs">
-          Verify Hybrid.OS 2026 self-managed status.
+        <CardDescription className="text-white/40 text-[10px] uppercase tracking-wider">
+          2026~ ByHelbss(C) Engine
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <Button 
-          onClick={handleAudit} 
+          onClick={handleAudit_2026_ByHelbss} 
           disabled={isLoading}
           className="w-full bg-primary text-black hover:bg-primary/90 rounded-xl font-bold"
         >
@@ -95,6 +95,7 @@ export function SystemHealth({ systemId, workspaceSlug }: SystemHealthProps) {
               <div className="pt-2 border-t border-white/5 flex flex-col gap-1">
                 <span className="text-[9px] text-white/30 font-mono uppercase">HASH: {healthData.integrityHash}</span>
                 <span className="text-[9px] text-white/30 font-mono uppercase">CHECK: {healthData.lastCheck}</span>
+                <span className="text-[7px] text-primary/40 font-mono uppercase">Verified by 2026~ ByHelbss(C)</span>
               </div>
             </div>
           </div>

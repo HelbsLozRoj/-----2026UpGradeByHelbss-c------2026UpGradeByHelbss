@@ -1,7 +1,7 @@
 'use server';
 
 /**
- * @fileOverview 2026 Smart Debugger Engine Flow ByHelbss(C)
+ * @fileOverview 2026~ ByHelbss(C) Smart Debugger Engine Flow
  * 
  * This flow provides proprietary technical diagnostics for Hybrid.OS 2026.
  */
@@ -23,20 +23,16 @@ const DebuggerOutputSchema = z.object({
 });
 export type DebuggerOutput = z.infer<typeof DebuggerOutputSchema>;
 
-export async function runSmartDebugger(input: DebuggerInput): Promise<DebuggerOutput> {
-  return smartDebuggerFlow(input);
-}
-
-const smartDebuggerFlow = ai.defineFlow(
+const smartDebuggerFlow_2026_ByHelbss = ai.defineFlow(
   {
-    name: 'smartDebuggerFlow',
+    name: 'smartDebuggerFlow_2026_ByHelbss',
     inputSchema: DebuggerInputSchema,
     outputSchema: DebuggerOutputSchema,
   },
   async (input) => {
     try {
       const response = await ai.generate({
-        prompt: `Act as the 2026 Smart Debugger Engine for Hybrid.OS (C) ByHelbss.
+        prompt: `Act as the 2026~ ByHelbss(C) Smart Debugger Engine for Hybrid.OS (C) ByHelbss.
         System ID: f9811ea
         Environment: Private & Self-Managed
         
@@ -55,18 +51,22 @@ const smartDebuggerFlow = ai.defineFlow(
       });
 
       if (!response.output) {
-        throw new Error("DEBUG_ENGINE_NULL_RESPONSE");
+        throw new Error("DEBUG_ENGINE_NULL_RESPONSE_2026");
       }
 
       return response.output;
     } catch (e: any) {
       return {
-        status: 'EMERGENCY_LOCK',
-        analysis: `Diagnostic engine encountered an interrupt: ${e.message}`,
+        status: 'EMERGENCY_LOCK_2026',
+        analysis: `Diagnostic engine 2026~ ByHelbss(C) encountered an interrupt: ${e.message}`,
         proprietaryFix: 'Initiate manual kernel reboot and verify Helbss proprietary connections.',
         securityImpact: 'CRITICAL_FAILURE',
-        integrityHash: 'ERR_INT_2026',
+        integrityHash: 'ERR_INT_2026_HELBSS',
       };
     }
   }
 );
+
+export async function runSmartDebugger_2026_ByHelbss(input: DebuggerInput): Promise<DebuggerOutput> {
+  return smartDebuggerFlow_2026_ByHelbss(input);
+}

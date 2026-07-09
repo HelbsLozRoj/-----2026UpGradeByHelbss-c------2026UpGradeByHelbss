@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Radio, Wifi, Activity, Lock, Server, Cpu } from "lucide-react";
-import { getLiveTelemetry } from "@/app/actions";
+import { Wifi, Activity, Lock, Server, Cpu } from "lucide-react";
+import { getLiveTelemetry_2026_ByHelbss } from "@/app/actions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
@@ -15,28 +15,28 @@ export function LiveMonitor() {
 
   const systemId = "f9811ea";
 
-  const addLog = (msg: string) => {
-    setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ${msg}`].slice(-50));
+  const addLog_2026_ByHelbss = (msg: string) => {
+    setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] 2026~ ByHelbss(C): ${msg}`].slice(-50));
   };
 
-  const connectToServer = async () => {
+  const connectToServer_2026_ByHelbss = async () => {
     if (isSyncing) return;
     setIsSyncing(true);
-    addLog("INITIATING PROPRIETARY HANDSHAKE...");
+    addLog_2026_ByHelbss("INITIATING PROPRIETARY HANDSHAKE...");
     
-    const response = await getLiveTelemetry(systemId);
+    const response = await getLiveTelemetry_2026_ByHelbss(systemId);
     
     if (response.data) {
       setIsConnected(true);
       const newLogs = response.data.split('\n').filter(l => l.trim());
       newLogs.forEach((line, i) => {
         setTimeout(() => {
-          addLog(line);
+          addLog_2026_ByHelbss(line);
           if (i === newLogs.length - 1) setIsSyncing(false);
         }, i * 400);
       });
     } else {
-      addLog(`CONNECTION_ERROR: ${response.error || "SERVER_TIMEOUT"}`);
+      addLog_2026_ByHelbss(`CONNECTION_ERROR: ${response.error || "SERVER_TIMEOUT"}`);
       setIsSyncing(false);
     }
   };
@@ -62,7 +62,7 @@ export function LiveMonitor() {
               <Lock className="size-3 mr-1" /> PRIVATE_LINK
             </Badge>
             <Badge variant="outline" className="border-white/10 text-white/40 text-[10px] font-mono uppercase">
-              Port: 2026
+              2026~ ByHelbss(C)
             </Badge>
           </div>
         </div>
@@ -86,7 +86,7 @@ export function LiveMonitor() {
               <Wifi className="size-12 opacity-20" />
               <p>WAITING FOR SOVEREIGN CONNECTION...</p>
               <button 
-                onClick={connectToServer}
+                onClick={connectToServer_2026_ByHelbss}
                 disabled={isSyncing}
                 className="not-italic bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 px-6 py-2 rounded-xl transition-all"
               >
@@ -104,7 +104,7 @@ export function LiveMonitor() {
               {isSyncing && (
                 <div className="flex gap-3 animate-pulse">
                   <span className="opacity-30 shrink-0">...</span>
-                  <span className="text-primary italic">STREAMING_DATA_PACKETS...</span>
+                  <span className="text-primary italic">2026~ ByHelbss(C) STREAMING...</span>
                 </div>
               )}
             </div>
@@ -113,7 +113,7 @@ export function LiveMonitor() {
 
         <div className="p-4 bg-black/40 border-t border-white/5 text-center">
             <p className="text-[9px] text-white/20 uppercase tracking-[0.2em]">
-                Verified Connection: Helbss Proprietary Layer 7 // Hybrid Core 2026
+                Verified Connection: 2026~ ByHelbss(C) Layer 7 // Hybrid Core 2026
             </p>
         </div>
       </CardContent>
