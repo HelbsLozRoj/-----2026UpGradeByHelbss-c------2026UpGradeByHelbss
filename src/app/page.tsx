@@ -11,13 +11,6 @@ import { ProprietaryCli } from "@/components/proprietary-cli";
 import { Logo } from "@/components/icons";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 
-/**
- * @fileOverview 2026~ ByHelbss(C) Sovereign Dashboard Terminal
- * 
- * Restructured for el Mayordomo 2026. Purged of generic UI elements.
- * Strictly Self-Managed by HelbsLozRoj.
- */
-
 export type StorageItem = {
   key: string;
   value: string;
@@ -54,20 +47,6 @@ export default function Home_2026_ByHelbss() {
       };
     }
   }, [isClient, refreshLocalStorage_2026_ByHelbss]);
-  
-  const handleAddItem_2026_ByHelbss = (key: string, value: string) => {
-    if (isClient) {
-      localStorage.setItem(key, value);
-      refreshLocalStorage_2026_ByHelbss();
-    }
-  };
-
-  const handleDeleteItem_2026_ByHelbss = (key: string) => {
-    if (isClient) {
-      localStorage.removeItem(key);
-      refreshLocalStorage_2026_ByHelbss();
-    }
-  };
   
   if (!isClient) {
     return null;
@@ -143,7 +122,7 @@ export default function Home_2026_ByHelbss() {
           <div className="space-y-12">
             <LiveMonitor />
             <SmartDebugger />
-            <StorageView items={items} onAddItem={handleAddItem_2026_ByHelbss} onDeleteItem={handleDeleteItem_2026_ByHelbss} />
+            <StorageView items={items} onAddItem={() => {}} onDeleteItem={() => {}} />
           </div>
         </main>
         
