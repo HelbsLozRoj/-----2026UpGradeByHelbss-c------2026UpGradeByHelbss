@@ -4,5 +4,6 @@
   "commitSha": "f9811ea",
   "workspaceSlug": "studio-6397789453",
   "enabledExperiments": false,
-  "accessMode": "Private & Self-Managed"
+  "accessMode": "Private & Self-Managed",
+  "repository": "gh repo clone Helbss/ElMayordomo2025"
 }
