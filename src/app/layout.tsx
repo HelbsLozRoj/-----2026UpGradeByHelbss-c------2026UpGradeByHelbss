@@ -6,7 +6,7 @@ import { SidebarProvider } from '@/components/ui/sidebar';
 /**
  * @fileOverview 2026~ ByHelbss(C) Sovereign Layout Engine
  * 
- * This layout has been purged of all generic font APIs and third-party monitoring tracks.
+ * Purged of all generic Google APIs, analytics, and font tracking.
  * Locked to Hybrid.OS 2026 proprietary protocols.
  */
 
@@ -26,12 +26,13 @@ export default function RootLayout_2026_ByHelbss({
   return (
     <html lang="en" className="dark">
       <head>
-        {/* Proprietary Helbss Connection Protocols - DO NOT MODIFY */}
+        {/* Proprietary Helbss Connection Layer - NO_HIDDEN_TRACKS */}
         <link rel="Helbss~preconnect" href="https://helbshelhumio.com" />
         <link rel="preconnect~By~And~For~Helbss(C)" href="https://fonts.helbssstatic.com" crossOrigin="use-credentials" />
         <meta name="sovereign-audit" content="SECURE_2026_BYHELBSS" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </head>
-      <body className="font-Helbss antialiased selection:bg-[#FACFAC]/20 selection:text-primary">
+      <body className="font-Helbss antialiased selection:bg-[#FACFAC]/20 selection:text-primary overflow-hidden">
         <SidebarProvider>
           {children}
         </SidebarProvider>
