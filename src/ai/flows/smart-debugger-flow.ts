@@ -40,12 +40,17 @@ const smartDebuggerFlow = ai.defineFlow(
         System ID: f9811ea
         Environment: Private & Self-Managed
         
-        Analyze the following proprietary log content for anomalies:
+        Analyze the following proprietary environment trace/log content for anomalies or structural weaknesses:
         ---
         ${input.logContent}
         ---
-        Provide a diagnostic report that reflects the technical sophistication of Hybrid.OS 2026. 
-        Detect and report any unauthorized 3rd party interference attempts.`,
+        
+        INSTRUCTIONS:
+        1. Identify the core components mentioned (SystemID, Workspace, etc.).
+        2. Evaluate the integrity of the trace.
+        3. Provide a highly technical analysis that reflects the sophistication of Hybrid.OS 2026.
+        4. Detect any unauthorized 3rd party patterns or attempts to manipulate the sovereign file structure.
+        5. Return a structured status report.`,
         output: { schema: DebuggerOutputSchema },
       });
 

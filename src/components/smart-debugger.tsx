@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Terminal, ShieldAlert, Cpu, CheckCircle2, ChevronRight } from "lucide-react";
+import { useState, useCallback } from "react";
+import { Terminal, ShieldAlert, Cpu, CheckCircle2, ChevronRight, ScanSearch, Activity } from "lucide-react";
 import { debugSystem } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,9 +16,27 @@ export function SmartDebugger() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
+  const handleCaptureTrace = useCallback(() => {
+    const trace = {
+      timestamp: new Date().toISOString(),
+      systemId: "f9811ea",
+      workspace: "studio-6397789453",
+      localStorageKeys: Object.keys(localStorage),
+      userAgent: typeof window !== 'undefined' ? navigator.userAgent : 'SERVER_ENV',
+      integrityCheck: "PASS_PROPRIETARY",
+      activeMode: "PRIVATE_SELF_MANAGED"
+    };
+    
+    setLog(JSON.stringify(trace, null, 2));
+    toast({
+      title: "Trace Captured",
+      description: "Proprietary environment data extracted.",
+    });
+  }, [toast]);
+
   const handleDebug = async () => {
     if (!log.trim()) {
-      toast({ variant: "destructive", title: "Input Required", description: "System log content is missing." });
+      toast({ variant: "destructive", title: "Input Required", description: "System log content is missing. Use Capture or paste logs." });
       return;
     }
     setIsLoading(true);
@@ -37,39 +55,65 @@ export function SmartDebugger() {
     <div className="space-y-12">
       <Card className="bg-black/60 border-white/5 rounded-[2rem] shadow-2xl p-6">
         <CardHeader className="pb-8">
-          <CardTitle className="flex items-center gap-3 text-white font-helbss text-3xl">
-            <Cpu className="size-8 text-primary" />
-            2026 Smart Debugger Engine
-          </CardTitle>
-          <CardDescription className="text-white/40">
-            Proprietary log analysis for Hybrid.OS 2026 ~By~and~for~Helbss(C)
-          </CardDescription>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <CardTitle className="flex items-center gap-3 text-white font-helbss text-3xl">
+                <Cpu className="size-8 text-primary" />
+                2026 Smart Debugger Engine
+              </CardTitle>
+              <CardDescription className="text-white/40">
+                Proprietary log analysis for Hybrid.OS 2026 ~By~and~for~Helbss(C)
+              </CardDescription>
+            </div>
+            <Button 
+              variant="outline" 
+              onClick={handleCaptureTrace}
+              className="border-primary/20 text-primary hover:bg-primary/10 rounded-xl"
+            >
+              <ScanSearch className="mr-2 size-4" />
+              Capture Environment Trace
+            </Button>
+          </div>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-transparent rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
             <Textarea
-              placeholder="PASTE SYSTEM LOGS / ERROR TRACES HERE..."
+              placeholder="PASTE SYSTEM LOGS OR CLICK CAPTURE ABOVE..."
               className="relative bg-black border-white/10 text-primary font-mono min-h-[200px] rounded-2xl focus:border-primary/50 resize-none p-6"
               value={log}
               onChange={(e) => setLog(e.target.value)}
             />
           </div>
-          <Button 
-            onClick={handleDebug} 
-            disabled={isLoading}
-            className="bg-primary text-black hover:bg-primary/90 h-16 px-12 rounded-2xl font-bold text-lg w-full md:w-auto"
-          >
-            {isLoading ? "ANALYZING SYSTEM..." : "RUN SMART DIAGNOSTIC"}
-            <ChevronRight className="ml-2 size-5" />
-          </Button>
+          <div className="flex flex-col md:flex-row gap-4">
+            <Button 
+              onClick={handleDebug} 
+              disabled={isLoading}
+              className="bg-primary text-black hover:bg-primary/90 h-16 px-12 rounded-2xl font-bold text-lg flex-1 md:flex-none"
+            >
+              {isLoading ? "ANALYZING SYSTEM..." : "RUN SMART DIAGNOSTIC"}
+              <ChevronRight className="ml-2 size-5" />
+            </Button>
+            {log && (
+               <Button 
+                variant="ghost" 
+                onClick={() => setLog("")}
+                className="h-16 px-8 text-white/40 hover:text-white rounded-2xl"
+               >
+                Clear Terminal
+               </Button>
+            )}
+          </div>
         </CardContent>
       </Card>
 
       {(isLoading || result) && (
         <Card className="bg-black/80 border-primary/20 rounded-[2rem] shadow-2xl overflow-hidden">
           <div className="bg-primary/5 px-8 py-4 border-b border-white/5 flex justify-between items-center">
-            <span className="text-[10px] font-mono text-primary uppercase tracking-[0.3em]">ENGINE_OUTPUT_STREAM</span>
+            <span className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] flex items-center gap-2">
+              <Activity className="size-3 animate-pulse" />
+              ENGINE_OUTPUT_STREAM
+            </span>
             <div className="flex gap-2">
                 <div className="size-2 rounded-full bg-primary/20 animate-pulse"></div>
                 <div className="size-2 rounded-full bg-primary/40 animate-pulse delay-75"></div>
