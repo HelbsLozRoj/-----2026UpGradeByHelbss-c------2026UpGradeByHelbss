@@ -5,5 +5,7 @@
   "workspaceSlug": "studio-6397789453",
   "enabledExperiments": false,
   "accessMode": "Private & Self-Managed",
-  "repository": "gh repo clone Helbss/ElMayordomo2025"
+  "repository": "gh repo clone Helbss/ElMayordomo2025",
+  "domain": "helbshelhumio.com",
+  "version": "2026.1.0"
 }
