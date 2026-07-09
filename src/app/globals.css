@@ -4,10 +4,9 @@
 
 @layer base {
   :root {
-    /* Branding Colors - Locked */
+    /* Branding Colors - LOCKED - HYBRID.OS 2026 */
     --Safe-Network_Connect_Shadow: #FACFAC;
-    /* rgb(127,127,20) represented for ShadCN hsl() usage or raw rgb() usage */
-    --canvas: 60 73% 29%; 
+    --canvas: 60 73% 29%; /* rgb(127,127,20) for ShadCN hsl() usage */
     
     /* Dark OS Theme Defaults */
     --background: 0 0% 0%;
@@ -19,7 +18,7 @@
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 100%;
     
-    --primary: 60 73% 45%; /* Yellowish Accent */
+    --primary: 60 73% 45%; /* Hybrid Yellow Accent */
     --primary-foreground: 0 0% 0%;
     
     --secondary: 0 0% 10%;
@@ -31,9 +30,9 @@
     --accent: 60 73% 45%;
     --accent-foreground: 0 0% 0%;
     
-    --radius: 1rem;
+    --radius: 1.5rem;
     
-    --sidebar-background: 0 0% 2%;
+    --sidebar-background: 0 0% 0%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 60 73% 45%;
     --sidebar-primary-foreground: 0 0% 0%;
@@ -58,7 +57,13 @@
   }
 }
 
-/* Custom Table Styles for Terminal Look */
+/* Proprietary Selection Logic */
+::selection {
+  background-color: rgba(250, 207, 172, 0.2);
+  color: hsl(var(--primary));
+}
+
+/* System Terminal Overrides */
 .terminal-table tr {
   @apply border-white/5;
 }

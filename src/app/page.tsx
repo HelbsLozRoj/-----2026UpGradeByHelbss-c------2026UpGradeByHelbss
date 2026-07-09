@@ -77,7 +77,7 @@ export default function Home() {
           <div className="flex flex-col gap-2 px-4">
             <div className="flex items-center gap-3">
               <Logo className="size-8 text-primary" />
-              <h1 className="text-2xl font-bold tracking-tight text-primary font-helbss">
+              <h1 className="text-2xl font-bold tracking-tight text-primary font-helbss uppercase">
                 Hybrid.OS 2026
               </h1>
             </div>
@@ -99,12 +99,13 @@ export default function Home() {
               <p>SHA: {systemInfo.commitSha}</p>
               <p>EXP: {systemInfo.experimentsEnabled ? "ENABLED" : "DISABLED"}</p>
               <p>MODE: {systemInfo.accessMode}</p>
+              <p className="text-primary/40">PROPRIETARY_SECURE_MODE: ON</p>
             </div>
           </div>
         </SidebarContent>
       </Sidebar>
       <SidebarInset className="bg-[hsl(var(--canvas))]">
-        <header className="flex items-center justify-between p-8 md:p-12 sticky top-0 z-10">
+        <header className="flex items-center justify-between p-8 md:p-12 sticky top-0 z-10 backdrop-blur-sm">
           <div className="flex items-center gap-4">
             <SidebarTrigger className="md:hidden text-white/80 hover:text-white"/>
             <div className="space-y-1">
@@ -115,8 +116,8 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden md:block">
-            <span className="text-[10px] bg-white/5 border border-white/10 text-white/50 px-3 py-1.5 rounded-full font-mono uppercase tracking-widest">
-              COMMIT: {systemInfo.commitSha}
+            <span className="text-[10px] bg-black/40 border border-white/10 text-white/50 px-4 py-2 rounded-full font-mono uppercase tracking-widest">
+              SECURE_AUDIT_ACTIVE: {systemInfo.commitSha}
             </span>
           </div>
         </header>
@@ -129,7 +130,7 @@ export default function Home() {
         
         <footer className="p-12 text-center text-[9px] text-white/20 font-mono uppercase tracking-[0.3em] space-y-2">
           <p>Hybrid.OS 2026 // Build: 2026.06.18 // ~By~and~for~Helbss(C)2026</p>
-          <p className="opacity-50">Private and Self-Managed // Unauthorized interaction restricted</p>
+          <p className="opacity-50 font-bold text-primary/30 italic">Unauthorized monitoring and manipulation restricted</p>
         </footer>
       </SidebarInset>
     </>
