@@ -1,8 +1,6 @@
-
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -10,7 +8,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    // Removed problematic allowedDevOrigins key causing validation errors in this version
+    // Removed problematic keys causing validation errors in this version
   },
   images: {
     remotePatterns: [

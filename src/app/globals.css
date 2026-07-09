@@ -31,13 +31,6 @@
     --accent: 60 73% 45%;
     --accent-foreground: 0 0% 0%;
     
-    --destructive: 0 84% 45%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --border: 0 0% 15%;
-    --input: 0 0% 2%;
-    --ring: 60 73% 45%;
-    
     --radius: 1rem;
     
     --sidebar-background: 0 0% 2%;
@@ -53,7 +46,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-white/5;
   }
   body {
     @apply antialiased transition-colors duration-300 font-sans;
