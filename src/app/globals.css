@@ -55,6 +55,16 @@
   }
 }
 
+/* Cinematic Launch Effects */
+.cinematic-scanline {
+  background: linear-gradient(to bottom, transparent 50%, rgba(250, 207, 172, 0.05) 50%);
+  background-size: 100% 4px;
+}
+
+.triumphant-glow {
+  text-shadow: 0 0 20px rgba(250, 207, 172, 0.5);
+}
+
 ::selection {
   background-color: rgba(250, 207, 172, 0.2);
   color: hsl(var(--primary));

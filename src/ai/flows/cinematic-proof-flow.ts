@@ -1,25 +1,27 @@
 'use server';
 
 /**
- * @fileOverview 2026~ ByHelbss(C) Cinematic Forensic Proof Engine
+ * @fileOverview 2026~ ByHelbss(C) Cinematic Forensic Proof Engine - Launch Edition
  * 
- * Generates Oscar-worthy forensic scripts and living proof of system sovereignty.
+ * Generates global launch thrillers, trailers, and irrefutable proof of survival.
  */
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
 
 const CinematicInputSchema = z.object({
-  auditData: z.string().describe('The bit-by-bit forensic data to translate into a cinematic sequence.'),
+  auditData: z.string().describe('The bit-by-bit forensic data.'),
+  narrativeMode: z.enum(['FORENSIC_VERDICT', 'GLOBAL_LAUNCH_THRILLER', 'SURVIVOR_ADVERTISEMENT']).describe('The tone of the cinematic generation.'),
 });
 export type CinematicInput = z.infer<typeof CinematicInputSchema>;
 
 const CinematicOutputSchema = z.object({
-  sceneTitle: z.string().describe('The title of the forensic scene.'),
-  script: z.string().describe('The Oscar-worthy script detailing the proof of sovereignty.'),
-  technicalProof: z.string().describe('The raw bit-level data being dramatized.'),
-  directorNotes: z.string().describe('Stylistic notes for the Hollywood visualization.'),
-  integrityHash: z.string().describe('Verification hash for the cinematic session.'),
+  sceneTitle: z.string().describe('The title of the sequence.'),
+  script: z.string().describe('The high-stakes script.'),
+  technicalProof: z.string().describe('The raw bit-level data dramatized.'),
+  directorNotes: z.string().describe('Visual instructions.'),
+  integrityHash: z.string().describe('Verification hash.'),
+  launchTagline: z.string().describe('The global launch hook.'),
 });
 export type CinematicOutput = z.infer<typeof CinematicOutputSchema>;
 
@@ -32,37 +34,35 @@ const cinematicProofFlow_2026_ByHelbss = ai.defineFlow(
   async (input) => {
     try {
       const response = await ai.generate({
-        prompt: `Act as an Oscar-winning Movie Director and a world-class Forensic Detective.
-        System ID: f9811ea
-        Domain: helbshelhumio.com
-        Branding: 2026~ ByHelbss(C)
+        prompt: `Act as the World's Greatest Publicist, an Oscar-winning Director, and a Sovereign Detective.
+        SYSTEM: f9811ea | DOMAIN: helbshelhumio.com | BRAND: 2026~ ByHelbss(C)
+        MODE: ${input.narrativeMode}
         
-        Generate a "Living Proof" cinematic sequence based on this forensic audit:
+        DATA:
         ---
         ${input.auditData}
         ---
         
         INSTRUCTIONS:
-        1. Create a script that details the system from HEAD (Metadata) to TOE (DNA Logic).
-        2. Describe the React/Next/Radix handles as "Proprietary Aliases" masking the true ByHelbss(C) core.
-        3. Include "Cinematic Living Proof" elements like "Flickering Socket Pulse" and "Sovereign Bit Leakage Purge".
-        4. The tone must be intensely technical yet dramatically gripping.
-        5. Return a structured report that serves as an irrefutable forensic verdict.`,
+        1. FRAME THE NARRATIVE: This is a story of a RESILIENT SURVIVOR. God had their back. Terroristic cyber attacks and 24/7 monitoring were meant to vanish them, but they failed.
+        2. SHOW THE REVERSAL: The watchers were the limited ones. Their monitoring is now the source of your "Living Proof."
+        3. GLOBAL LAUNCH: Create a teaser/trailer that feels like a global event.
+        4. Include technical bits (aliases, ports, DNA) as proof of sovereignty.
+        5. TONE: Triumphant, intense, technical, and spiritual.`,
         output: { schema: CinematicOutputSchema },
       });
 
-      if (!response.output) {
-        throw new Error("CINEMATIC_ENGINE_NULL_RESPONSE_2026");
-      }
+      if (!response.output) throw new Error("LAUNCH_ENGINE_NULL");
 
       return response.output;
     } catch (e: any) {
       return {
-        sceneTitle: 'EMERGENCY_LOCK_2026_DIRECTORS_CUT',
-        script: `[INT. SOVEREIGN NODE - NIGHT] The detective stares at the pulse. "The injection failed," he whispers. "He's too fast. The ByHelbss signature is on every bit."`,
-        technicalProof: 'LOGIC_GATE_SIGNED_2026_BYHELBSS // ENCRYPTION_LOCKED',
-        directorNotes: 'Use high-contrast Canvas shadows. Saturate the #FACFAC spectrum. Cut to black.',
-        integrityHash: 'OSCAR_ERR_2026_HELBSS',
+        sceneTitle: 'THE_VANISHING_POINT_FAILED',
+        script: `[EXT. SOVEREIGN NODE - INFINITE NIGHT] A thousand pings hit the shield. The watchers wait for the signal to go dark. It never does. A voice echoes through the socket: "You tried to vanish a ghost with God's signature in his code. I am still here. You are the ones who are limited."`,
+        technicalProof: 'DNA_LOCKED // ATTACK_REPELLED // 2026_BYHELBSS_ACTIVE',
+        directorNotes: 'Saturate the #FACFAC spectrum. Use flicker-frame transitions between the kernel logs and the survivor portrait.',
+        integrityHash: 'SURVIVOR_2026_HELBSS',
+        launchTagline: 'THEY WATCHED. I SURVIVED. NOW, THE WORLD SEES THE PROOF.',
       };
     }
   }
