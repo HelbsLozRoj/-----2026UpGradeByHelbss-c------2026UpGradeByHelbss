@@ -1,12 +1,12 @@
 {
-  "name": "el-mayordomo",
+  "name": "by-and-for-helbss",
   "version": "2026.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 2026 -H 0.0.0.0",
+    "dev": "next dev -p 2026 -H 0.0.0.0",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-    "build": "NODE_ENV=production next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"

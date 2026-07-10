@@ -1,10 +1,9 @@
 import type { SVGProps } from "react";
 
 /**
- * @fileOverview Proprietary 2026~ ByHelbss(C) Icon Library
+ * @fileOverview Proprietary 2026~ ByHelbss(C) Sovereign Emblem
  * 
- * Purged of all Next/React/Google generic emblems.
- * Original ByHelbss(C) 2026 Core Branding.
+ * Locked core branding. No external tracks.
  */
 
 export function Logo(props: SVGProps<SVGSVGElement>) {
@@ -15,27 +14,16 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      {/* Sovereign Shield Base - Hybrid.OS 2026 */}
-      <rect width="100" height="100" rx="28" fill="currentColor" fillOpacity="0.15" />
-      
-      {/* Proprietary Helbss Vector Path */}
+      <rect width="100" height="100" rx="10" fill="currentColor" fillOpacity="0.1" />
       <path 
-        d="M20 20 L80 80 M80 20 L20 80" 
+        d="M10 10 L90 90 M90 10 L10 90" 
         stroke="currentColor" 
-        strokeWidth="12" 
-        strokeLinecap="square" 
-        strokeOpacity="0.9"
+        strokeWidth="15" 
+        strokeLinecap="square"
       />
-      
-      {/* Central Lockdown Node */}
-      <circle cx="50" cy="50" r="15" fill="currentColor" />
-      <circle cx="50" cy="50" r="22" stroke="currentColor" strokeWidth="4" />
-      
-      {/* Anti-Injection Pins */}
-      <path d="M50 0 V15" stroke="currentColor" strokeWidth="8" strokeLinecap="square" />
-      <path d="M50 85 V100" stroke="currentColor" strokeWidth="8" strokeLinecap="square" />
-      <path d="M0 50 H15" stroke="currentColor" strokeWidth="8" strokeLinecap="square" />
-      <path d="M85 50 H100" stroke="currentColor" strokeWidth="8" strokeLinecap="square" />
+      <circle cx="50" cy="50" r="12" fill="currentColor" />
+      <rect x="45" y="0" width="10" height="100" fill="currentColor" fillOpacity="0.5" />
+      <rect x="0" y="45" width="100" height="10" fill="currentColor" fillOpacity="0.5" />
     </svg>
   );
 }

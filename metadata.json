@@ -1,12 +1,11 @@
 {
-  "name": "el Mayordomo // Hybrid.OS 2026 ~By~and~for~Helbss(C)2026",
+  "name": "by-and-for-helbss // Hybrid.OS 2026",
   "description": "Sovereign Monitoring and Private API CLI for helbshelhumio.com",
   "commitSha": "f9811ea",
-  "workspaceSlug": "studio-6397789453",
+  "workspaceSlug": "SOVEREIGN_NODE_2026",
   "enabledExperiments": false,
   "accessMode": "Private & Self-Managed",
-  "repository": "gh repo clone Helbss/ElMayordomo2025",
+  "signature": "2026~ ByHelbss(C)",
   "domain": "helbshelhumio.com",
-  "version": "2026.1.0",
-  "signature": "2026~ ByHelbss(C)"
+  "version": "2026.1.0"
 }
