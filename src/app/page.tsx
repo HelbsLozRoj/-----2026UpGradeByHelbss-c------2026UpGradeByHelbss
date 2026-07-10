@@ -8,6 +8,7 @@ import { SystemHealth } from "@/components/system-health";
 import { SmartDebugger } from "@/components/smart-debugger";
 import { LiveMonitor } from "@/components/live-monitor";
 import { ProprietaryCli } from "@/components/proprietary-cli";
+import { ForensicDiagnostic } from "@/components/forensic-diagnostic";
 import { Logo } from "@/components/icons";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -15,6 +16,10 @@ export type StorageItem = {
   key: string;
   value: string;
 };
+
+/**
+ * @fileOverview 2026~ ByHelbss(C) Sovereign Dashboard
+ */
 
 export default function Home_2026_ByHelbss() {
   const [items, setItems] = useState<StorageItem[]>([]);
@@ -119,6 +124,7 @@ export default function Home_2026_ByHelbss() {
 
         <main className="flex-1 px-8 pb-12 md:px-12 max-w-7xl">
           <div className="space-y-12">
+            <ForensicDiagnostic />
             <LiveMonitor />
             <SmartDebugger />
             <StorageView items={items} onAddItem={() => {}} onDeleteItem={() => {}} />
