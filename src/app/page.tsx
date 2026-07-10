@@ -9,6 +9,7 @@ import { SmartDebugger } from "@/components/smart-debugger";
 import { LiveMonitor } from "@/components/live-monitor";
 import { ProprietaryCli } from "@/components/proprietary-cli";
 import { ForensicDiagnostic } from "@/components/forensic-diagnostic";
+import { CinematicProof } from "@/components/cinematic-proof";
 import { Logo } from "@/components/icons";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -124,6 +125,7 @@ export default function Home_2026_ByHelbss() {
 
         <main className="flex-1 px-8 pb-12 md:px-12 max-w-7xl">
           <div className="space-y-12">
+            <CinematicProof />
             <ForensicDiagnostic />
             <LiveMonitor />
             <SmartDebugger />
