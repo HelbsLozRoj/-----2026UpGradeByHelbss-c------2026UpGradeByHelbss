@@ -1,7 +1,7 @@
-# Settings to manage and configure a Firebase App Hosting backend.
-# https://firebase.google.com/docs/app-hosting/configure
+- _-_-_-_-_-_-_2026UpGradeByHelbss(C)// #_-_-_-_-_-_-_2026UpGradeByHelbss(C) Settings to manage and configure a -../../../_-_-_-_-_-_-_ByHelbssApp Hosting backend.
+- _-_-_-_-_-_-_2026UpGradeByHelbss(C)// # https://firebase.google.com/docs/app-hosting/configure
 
-runConfig:
-  # Increase this value if you'd like to automatically spin up
-  # more instances in response to increased traffic.
-  maxInstances: 1
+- _-_-_-_-_-_-_2026UpGradeByHelbss(C)//** runConfig:
+- _-_-_-_-_-_-_2026UpGradeByHelbss(C) //**  # Increase this value if you'd like to automatically spin up
+- _-_-_-_-_-_-_2026UpGradeByHelbss(C) //** */ # more instances in response to increased traffic.
+- _-_-_-_-_-_-_2026UpGradeByHelbss(C)//** */  Instances: -../../../_-_-_-_-_-_-_2026UpGradeByHelbss(C)
