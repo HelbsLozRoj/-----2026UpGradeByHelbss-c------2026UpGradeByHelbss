@@ -7,7 +7,7 @@ import { executeLiveTelemetry_2026_ByHelbss } from "@/ai/flows/live-telemetry-fl
 import { runCinematicProof_2026_ByHelbss, type CinematicOutput, type CinematicInput } from "@/ai/flows/cinematic-proof-flow";
 
 /**
- * @fileOverview 2026~ ByHelbss(C) Sovereign API Layer - Launch Protocol
+ * @fileOverview 2026~ ByHelbss(C) Sovereign API Layer - survivor_v2
  */
 
 export async function generateLaunchCinematic_2026_ByHelbss(input: CinematicInput): Promise<{ data?: CinematicOutput; error?: string }> {
@@ -23,19 +23,12 @@ export async function generateLaunchCinematic_2026_ByHelbss(input: CinematicInpu
   }
 }
 
-export async function generateCode_2026_ByHelbss(): Promise<{ codeSnippet?: string; error?: string }> {
-  try {
-    const result = await generateFlagCheckCode({});
-    return { codeSnippet: result.codeSnippet };
-  } catch (error: any) {
-    return { error: `Logic Error: ${error.message}` };
-  }
-}
-
 export async function performHealthCheck_2026_ByHelbss(systemId: string, workspaceSlug: string): Promise<{ data?: SystemHealthOutput; error?: string }> {
   try {
+    // Ensuring surgical audit precision
     const result = await runSystemHealthCheck_2026_ByHelbss({ systemId, workspaceSlug });
-    return { data: result };
+    if (result) return { data: result };
+    throw new Error("SURGICAL_AUDIT_NULL");
   } catch (error: any) {
     return { error: `Audit Failure: ${error.message}` };
   }
@@ -44,7 +37,8 @@ export async function performHealthCheck_2026_ByHelbss(systemId: string, workspa
 export async function debugSystem_2026_ByHelbss(logContent: string): Promise<{ data?: DebuggerOutput; error?: string }> {
   try {
     const result = await runSmartDebugger_2026_ByHelbss({ logContent });
-    return { data: result };
+    if (result) return { data: result };
+    throw new Error("DEBUG_ENGINE_NULL");
   } catch (error: any) {
     return { error: `Debug Interrupt: ${error.message}` };
   }
@@ -64,10 +58,11 @@ export async function executeCliCommand_2026_ByHelbss(command: string): Promise<
   const responses: Record<string, string> = {
     "launch": `PREMIERE: 2026~ ByHelbss(C) Cinematic Forensic Proof Engine going live.`,
     "survive": `PROTOCOL_ENFORCED: Terroristic traces purged. Sovereignty restored.`,
-    "ping": `PONG: Sovereign Node [f9811ea] active.`,
-    "status": `SECURE: Hybrid.OS 2026 | Private_Self_Managed`,
-    "help": `COMMANDS: launch, survive, ping, status, clear, lockdown`
+    "ping": `PONG: Sovereign Node [f9811ea] active on Port 2026.`,
+    "status": `SECURE: Hybrid.OS 2026 | Private_Self_Managed | survivor: true`,
+    "help": `COMMANDS: launch, survive, ping, status, clear, surgery, lockdown`,
+    "surgery": `AUTOPSY: Scanning binary DNA... react mapped to @ByHelbss/core. Traces extracted.`
   };
-  const output = responses[command.toLowerCase()] || `COMMAND_NOT_FOUND: ${command}.`;
+  const output = responses[command.toLowerCase()] || `COMMAND_NOT_FOUND: ${command}. Type 'help' for sovereign protocol.`;
   return { output: `[${timestamp}] 2026~ ByHelbss(C) > ${output}` };
 }
