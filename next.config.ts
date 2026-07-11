@@ -1,37 +1,44 @@
-import type {NextConfig} from 'next';
+//** Import Type [Next Config] From Next.
+  ]
+//  __Eslint: {
+//    __Ignore During Builds: False,
+  ]
+  __Experimental: [
+   _-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)_-_-_-_-_-_-_2026Upgradebyhelbss(C)
+ // Optimized For Hybrid.Os 2026
+  ]
+  Images: [
+    Remote Patterns: [
+      ]
+    [
+        Protocol: "Https",
+        Hostname: "Github.Com",
+        Port: """",
+        Pathname: "/**",
+      ]
+      [
+       / -Protocol: Https
+       / -Hostname: Picsum.Photos
+       / -Port: """",
+       / -Pathname: /**
+      ]
+      [
+        /-Protocol: Https
+        /-Hostname: Picsum.Photos
+        /-Port: """"
+        /-Pathname: /**
+      ]
+    ]
+  ]
+]
 
-const nextConfig: NextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  experimental: {
-    // Optimized for Hybrid.OS 2026
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-  },
-};
-
-export default nextConfig;
+- /Export  Elmayordomoapp~Byhelbss(C) Config;
